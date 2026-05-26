@@ -1,0 +1,816 @@
+{
+  "source_files": [
+    "P:\\Proj\\Aegion Dynamics\\dagr v0\\tr_data\\final_data\\calc\\attribution.json",
+    "P:\\Proj\\Aegion Dynamics\\dagr v0\\tr_data\\final_data\\calc\\attribution_factor.json"
+  ],
+  "attribution": {
+    "as_of_date": "2026-01-27",
+    "period": "ITD",
+    "total": {
+      "portfolio_weight": 199.99999999,
+      "benchmark_weight": 100.0,
+      "portfolio_return": 9.4786978651,
+      "benchmark_return": 9.478697865,
+      "total_attribution": 2e-10
+    },
+    "group_results": [
+      {
+        "group_name": "Equity",
+        "period": "ITD",
+        "start_date": "2025-01-28",
+        "end_date": "2026-01-27",
+        "portfolio_weight": 100.0,
+        "benchmark_weight": 50.0,
+        "active_weight": 50.0,
+        "portfolio_return": 11.5507633,
+        "benchmark_return": 9.478697865,
+        "active_return": 2.072065435,
+        "portfolio_local_return": 11.5507633,
+        "benchmark_local_return": 9.478697865,
+        "active_local_return": 2.072065435,
+        "attribution_total": 2.072065435,
+        "attribution_allocation": 0.0,
+        "attribution_selection": 1.0360327175,
+        "attribution_interaction": 1.0360327175,
+        "attribution_base": 0.6216196305,
+        "attribution_model_base": 0.414413087,
+        "attribution_market_timing": 0.0,
+        "attribution_local_residual": 0.2072065435,
+        "attribution_industry": -0.0,
+        "validation_flag": "OK"
+      },
+      {
+        "group_name": "Fixed Income",
+        "period": "ITD",
+        "start_date": "2025-01-28",
+        "end_date": "2026-01-27",
+        "portfolio_weight": 99.99999999,
+        "benchmark_weight": 50.0,
+        "active_weight": 49.99999999,
+        "portfolio_return": 7.40663243,
+        "benchmark_return": 9.478697865,
+        "active_return": -2.072065435,
+        "portfolio_local_return": 7.40663243,
+        "benchmark_local_return": 9.478697865,
+        "active_local_return": -2.072065435,
+        "attribution_total": -2.0720654348,
+        "attribution_allocation": 0.0,
+        "attribution_selection": -1.0360327175,
+        "attribution_interaction": -1.0360327173,
+        "attribution_base": -0.6216196304,
+        "attribution_model_base": -0.414413087,
+        "attribution_market_timing": 0.0,
+        "attribution_local_residual": -0.2072065435,
+        "attribution_industry": -0.0,
+        "validation_flag": "OK"
+      }
+    ],
+    "drill_down": [
+      {
+        "category": "Industry",
+        "attribution_value": 2.3696744662
+      },
+      {
+        "category": "Style",
+        "attribution_value": 0.3317544253
+      },
+      {
+        "category": "Commodity",
+        "attribution_value": -0.4739348932
+      },
+      {
+        "category": "Eq. Implied Vol",
+        "attribution_value": -0.3791479146
+      },
+      {
+        "category": "Country",
+        "attribution_value": 0.9952632758
+      },
+      {
+        "category": "World",
+        "attribution_value": 1.895739573
+      },
+      {
+        "category": "Specific Return",
+        "attribution_value": 1.1279650459
+      }
+    ]
+  },
+  "attribution_factor": {
+    "as_of_date": "2026-01-27",
+    "group_exposures": {
+      "Equity": 100.0,
+      "Fixed Income": 99.99999999
+    },
+    "factor_details": [
+      {
+        "group_name": "IND",
+        "factor_group": "Common Factor",
+        "factor_name": "IN Size",
+        "portfolio_avg_exposure": -76.8125979117,
+        "benchmark_avg_exposure": 118.3216934691,
+        "active_avg_exposure": -195.1342913808,
+        "factor_return": 0.0245617956,
+        "attribution_local_residual": -0.0004792849
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Beta",
+        "portfolio_avg_exposure": -59.3615251005,
+        "benchmark_avg_exposure": 138.1021123839,
+        "active_avg_exposure": -197.4636374844,
+        "factor_return": 6.5952225067,
+        "attribution_local_residual": -0.1302316626
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Momentum",
+        "portfolio_avg_exposure": -27.4741144242,
+        "benchmark_avg_exposure": 12.1363852082,
+        "active_avg_exposure": -39.6104996323,
+        "factor_return": 7.6941520989,
+        "attribution_local_residual": -0.0304769209
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Liquidity",
+        "portfolio_avg_exposure": 68.2983931937,
+        "benchmark_avg_exposure": 199.2798102461,
+        "active_avg_exposure": -130.9814170525,
+        "factor_return": 6.3304943171,
+        "attribution_local_residual": -0.0829177116
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Energy",
+        "portfolio_avg_exposure": 47.6475361563,
+        "benchmark_avg_exposure": 32.1093090972,
+        "active_avg_exposure": 15.5382270592,
+        "factor_return": 0.6671466277,
+        "attribution_local_residual": 0.0010366276
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Banks",
+        "portfolio_avg_exposure": -119.7351832639,
+        "benchmark_avg_exposure": -14.3142658851,
+        "active_avg_exposure": -105.4209173787,
+        "factor_return": -3.4351644411,
+        "attribution_local_residual": 0.0362138187
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Metals and Mining ex Gol",
+        "portfolio_avg_exposure": 140.5589250829,
+        "benchmark_avg_exposure": 23.3537559307,
+        "active_avg_exposure": 117.2051691521,
+        "factor_return": 4.0924762683,
+        "attribution_local_residual": 0.0479659373
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Software and Services",
+        "portfolio_avg_exposure": 225.1813457558,
+        "benchmark_avg_exposure": 170.0636174321,
+        "active_avg_exposure": 55.1177283237,
+        "factor_return": 7.7376391368,
+        "attribution_local_residual": 0.0426481092
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Consumer Staples",
+        "portfolio_avg_exposure": 80.7789439429,
+        "benchmark_avg_exposure": -7.6462124816,
+        "active_avg_exposure": 88.4251564244,
+        "factor_return": 6.5174546984,
+        "attribution_local_residual": 0.0576306951
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Steel",
+        "portfolio_avg_exposure": 24.682695797,
+        "benchmark_avg_exposure": 110.2450829221,
+        "active_avg_exposure": -85.5623871251,
+        "factor_return": 8.8414306085,
+        "attribution_local_residual": -0.0756493908
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Investment Quality",
+        "portfolio_avg_exposure": -79.1431368214,
+        "benchmark_avg_exposure": 102.0427789339,
+        "active_avg_exposure": -181.1859157553,
+        "factor_return": -1.3726875038,
+        "attribution_local_residual": 0.0248711642
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Foreign Sensitivity",
+        "portfolio_avg_exposure": 218.4584314721,
+        "benchmark_avg_exposure": 139.7133686952,
+        "active_avg_exposure": 78.7450627769,
+        "factor_return": -2.4383124606,
+        "attribution_local_residual": -0.0192005068
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Health Care",
+        "portfolio_avg_exposure": 79.0823427138,
+        "benchmark_avg_exposure": 64.5413698062,
+        "active_avg_exposure": 14.5409729077,
+        "factor_return": -2.2641777673,
+        "attribution_local_residual": -0.0032923348
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Diversified Financials an",
+        "portfolio_avg_exposure": -74.3333134911,
+        "benchmark_avg_exposure": -18.6000033096,
+        "active_avg_exposure": -55.7333101815,
+        "factor_return": -0.5561391445,
+        "attribution_local_residual": 0.0030995475
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Mid Capitalization",
+        "portfolio_avg_exposure": -32.0613626432,
+        "benchmark_avg_exposure": 59.6281123256,
+        "active_avg_exposure": -91.6894749688,
+        "factor_return": -3.8707612964,
+        "attribution_local_residual": 0.0354908071
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Common Factor",
+        "factor_name": "IN Country",
+        "portfolio_avg_exposure": 176.3683774686,
+        "benchmark_avg_exposure": -17.7986155396,
+        "active_avg_exposure": 194.1669930082,
+        "factor_return": 7.8018593459,
+        "attribution_local_residual": 0.1514863569
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Telecommunication Se..",
+        "portfolio_avg_exposure": 66.3025386995,
+        "benchmark_avg_exposure": -26.2470619891,
+        "active_avg_exposure": 92.5496006887,
+        "factor_return": 3.9221428931,
+        "attribution_local_residual": 0.0362992759
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Capital Goods ex Bui..",
+        "portfolio_avg_exposure": -26.0986731402,
+        "benchmark_avg_exposure": 178.5129955594,
+        "active_avg_exposure": -204.6116686996,
+        "factor_return": 7.0910724593,
+        "attribution_local_residual": -0.1450916169
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Electronics and Semi..",
+        "portfolio_avg_exposure": 55.9696769865,
+        "benchmark_avg_exposure": 171.8321833406,
+        "active_avg_exposure": -115.8625063541,
+        "factor_return": -0.0628989556,
+        "attribution_local_residual": 0.0007287631
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Diversified Financials..",
+        "portfolio_avg_exposure": -6.1778001782,
+        "benchmark_avg_exposure": 154.7202968642,
+        "active_avg_exposure": -160.8980970424,
+        "factor_return": 0.605498227,
+        "attribution_local_residual": -0.0097423512
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Chemicals",
+        "portfolio_avg_exposure": 199.7126272451,
+        "benchmark_avg_exposure": 180.5927591509,
+        "active_avg_exposure": 19.1198680943,
+        "factor_return": 5.9323823819,
+        "attribution_local_residual": 0.0113426369
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Banks",
+        "portfolio_avg_exposure": -119.7351832639,
+        "benchmark_avg_exposure": -14.3142658851,
+        "active_avg_exposure": -105.4209173787,
+        "factor_return": -3.4351644411,
+        "attribution_local_residual": 0.0362138187
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Automobiles and Car..",
+        "portfolio_avg_exposure": 131.0664687289,
+        "benchmark_avg_exposure": -23.8319751375,
+        "active_avg_exposure": 154.8984438665,
+        "factor_return": -0.4103642786,
+        "attribution_local_residual": -0.0063564788
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Construction Materials..",
+        "portfolio_avg_exposure": 81.1431375842,
+        "benchmark_avg_exposure": 99.8456261149,
+        "active_avg_exposure": -18.7024885307,
+        "factor_return": 7.2717715935,
+        "attribution_local_residual": -0.0136000225
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Airlines and Marine",
+        "portfolio_avg_exposure": 89.7073596688,
+        "benchmark_avg_exposure": 53.6637819575,
+        "active_avg_exposure": 36.0435777113,
+        "factor_return": 7.5317480958,
+        "attribution_local_residual": 0.0271471148
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Building Products an..",
+        "portfolio_avg_exposure": 16.3449459972,
+        "benchmark_avg_exposure": -45.5417337522,
+        "active_avg_exposure": 61.8866797494,
+        "factor_return": -0.3877711999,
+        "attribution_local_residual": -0.0023997872
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Consumer Durables a..",
+        "portfolio_avg_exposure": -16.1936138875,
+        "benchmark_avg_exposure": -41.1360727447,
+        "active_avg_exposure": 24.9424588573,
+        "factor_return": 1.572834452,
+        "attribution_local_residual": 0.0039230359
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Consumer Services",
+        "portfolio_avg_exposure": 77.727546758,
+        "benchmark_avg_exposure": -12.9150072748,
+        "active_avg_exposure": 90.6425540327,
+        "factor_return": 8.2245836807,
+        "attribution_local_residual": 0.0745497271
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Media and Retailing",
+        "portfolio_avg_exposure": 68.7017984587,
+        "benchmark_avg_exposure": 122.1109134446,
+        "active_avg_exposure": -53.4091149859,
+        "factor_return": 3.3245977219,
+        "attribution_local_residual": -0.0177563822
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Steel",
+        "portfolio_avg_exposure": 24.682695797,
+        "benchmark_avg_exposure": 110.2450829221,
+        "active_avg_exposure": -85.5623871251,
+        "factor_return": 8.8414306085,
+        "attribution_local_residual": -0.0756493908
+      }
+    ],
+    "top_factors_by_attribution": [
+      {
+        "group_name": "IND",
+        "factor_group": "Common Factor",
+        "factor_name": "IN Country",
+        "portfolio_avg_exposure": 176.3683774686,
+        "benchmark_avg_exposure": -17.7986155396,
+        "active_avg_exposure": 194.1669930082,
+        "factor_return": 7.8018593459,
+        "attribution_local_residual": 0.1514863569
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Consumer Services",
+        "portfolio_avg_exposure": 77.727546758,
+        "benchmark_avg_exposure": -12.9150072748,
+        "active_avg_exposure": 90.6425540327,
+        "factor_return": 8.2245836807,
+        "attribution_local_residual": 0.0745497271
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Consumer Staples",
+        "portfolio_avg_exposure": 80.7789439429,
+        "benchmark_avg_exposure": -7.6462124816,
+        "active_avg_exposure": 88.4251564244,
+        "factor_return": 6.5174546984,
+        "attribution_local_residual": 0.0576306951
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Metals and Mining ex Gol",
+        "portfolio_avg_exposure": 140.5589250829,
+        "benchmark_avg_exposure": 23.3537559307,
+        "active_avg_exposure": 117.2051691521,
+        "factor_return": 4.0924762683,
+        "attribution_local_residual": 0.0479659373
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Software and Services",
+        "portfolio_avg_exposure": 225.1813457558,
+        "benchmark_avg_exposure": 170.0636174321,
+        "active_avg_exposure": 55.1177283237,
+        "factor_return": 7.7376391368,
+        "attribution_local_residual": 0.0426481092
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Telecommunication Se..",
+        "portfolio_avg_exposure": 66.3025386995,
+        "benchmark_avg_exposure": -26.2470619891,
+        "active_avg_exposure": 92.5496006887,
+        "factor_return": 3.9221428931,
+        "attribution_local_residual": 0.0362992759
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Banks",
+        "portfolio_avg_exposure": -119.7351832639,
+        "benchmark_avg_exposure": -14.3142658851,
+        "active_avg_exposure": -105.4209173787,
+        "factor_return": -3.4351644411,
+        "attribution_local_residual": 0.0362138187
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Banks",
+        "portfolio_avg_exposure": -119.7351832639,
+        "benchmark_avg_exposure": -14.3142658851,
+        "active_avg_exposure": -105.4209173787,
+        "factor_return": -3.4351644411,
+        "attribution_local_residual": 0.0362138187
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Mid Capitalization",
+        "portfolio_avg_exposure": -32.0613626432,
+        "benchmark_avg_exposure": 59.6281123256,
+        "active_avg_exposure": -91.6894749688,
+        "factor_return": -3.8707612964,
+        "attribution_local_residual": 0.0354908071
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Airlines and Marine",
+        "portfolio_avg_exposure": 89.7073596688,
+        "benchmark_avg_exposure": 53.6637819575,
+        "active_avg_exposure": 36.0435777113,
+        "factor_return": 7.5317480958,
+        "attribution_local_residual": 0.0271471148
+      }
+    ],
+    "bottom_factors_by_attribution": [
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Capital Goods ex Bui..",
+        "portfolio_avg_exposure": -26.0986731402,
+        "benchmark_avg_exposure": 178.5129955594,
+        "active_avg_exposure": -204.6116686996,
+        "factor_return": 7.0910724593,
+        "attribution_local_residual": -0.1450916169
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Beta",
+        "portfolio_avg_exposure": -59.3615251005,
+        "benchmark_avg_exposure": 138.1021123839,
+        "active_avg_exposure": -197.4636374844,
+        "factor_return": 6.5952225067,
+        "attribution_local_residual": -0.1302316626
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Liquidity",
+        "portfolio_avg_exposure": 68.2983931937,
+        "benchmark_avg_exposure": 199.2798102461,
+        "active_avg_exposure": -130.9814170525,
+        "factor_return": 6.3304943171,
+        "attribution_local_residual": -0.0829177116
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Steel",
+        "portfolio_avg_exposure": 24.682695797,
+        "benchmark_avg_exposure": 110.2450829221,
+        "active_avg_exposure": -85.5623871251,
+        "factor_return": 8.8414306085,
+        "attribution_local_residual": -0.0756493908
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Steel",
+        "portfolio_avg_exposure": 24.682695797,
+        "benchmark_avg_exposure": 110.2450829221,
+        "active_avg_exposure": -85.5623871251,
+        "factor_return": 8.8414306085,
+        "attribution_local_residual": -0.0756493908
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Momentum",
+        "portfolio_avg_exposure": -27.4741144242,
+        "benchmark_avg_exposure": 12.1363852082,
+        "active_avg_exposure": -39.6104996323,
+        "factor_return": 7.6941520989,
+        "attribution_local_residual": -0.0304769209
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Foreign Sensitivity",
+        "portfolio_avg_exposure": 218.4584314721,
+        "benchmark_avg_exposure": 139.7133686952,
+        "active_avg_exposure": 78.7450627769,
+        "factor_return": -2.4383124606,
+        "attribution_local_residual": -0.0192005068
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Media and Retailing",
+        "portfolio_avg_exposure": 68.7017984587,
+        "benchmark_avg_exposure": 122.1109134446,
+        "active_avg_exposure": -53.4091149859,
+        "factor_return": 3.3245977219,
+        "attribution_local_residual": -0.0177563822
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Construction Materials..",
+        "portfolio_avg_exposure": 81.1431375842,
+        "benchmark_avg_exposure": 99.8456261149,
+        "active_avg_exposure": -18.7024885307,
+        "factor_return": 7.2717715935,
+        "attribution_local_residual": -0.0136000225
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Diversified Financials..",
+        "portfolio_avg_exposure": -6.1778001782,
+        "benchmark_avg_exposure": 154.7202968642,
+        "active_avg_exposure": -160.8980970424,
+        "factor_return": 0.605498227,
+        "attribution_local_residual": -0.0097423512
+      }
+    ],
+    "top_factors_by_return": [
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Steel",
+        "portfolio_avg_exposure": 24.682695797,
+        "benchmark_avg_exposure": 110.2450829221,
+        "active_avg_exposure": -85.5623871251,
+        "factor_return": 8.8414306085,
+        "attribution_local_residual": -0.0756493908
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Steel",
+        "portfolio_avg_exposure": 24.682695797,
+        "benchmark_avg_exposure": 110.2450829221,
+        "active_avg_exposure": -85.5623871251,
+        "factor_return": 8.8414306085,
+        "attribution_local_residual": -0.0756493908
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Consumer Services",
+        "portfolio_avg_exposure": 77.727546758,
+        "benchmark_avg_exposure": -12.9150072748,
+        "active_avg_exposure": 90.6425540327,
+        "factor_return": 8.2245836807,
+        "attribution_local_residual": 0.0745497271
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Common Factor",
+        "factor_name": "IN Country",
+        "portfolio_avg_exposure": 176.3683774686,
+        "benchmark_avg_exposure": -17.7986155396,
+        "active_avg_exposure": 194.1669930082,
+        "factor_return": 7.8018593459,
+        "attribution_local_residual": 0.1514863569
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Software and Services",
+        "portfolio_avg_exposure": 225.1813457558,
+        "benchmark_avg_exposure": 170.0636174321,
+        "active_avg_exposure": 55.1177283237,
+        "factor_return": 7.7376391368,
+        "attribution_local_residual": 0.0426481092
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Momentum",
+        "portfolio_avg_exposure": -27.4741144242,
+        "benchmark_avg_exposure": 12.1363852082,
+        "active_avg_exposure": -39.6104996323,
+        "factor_return": 7.6941520989,
+        "attribution_local_residual": -0.0304769209
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Airlines and Marine",
+        "portfolio_avg_exposure": 89.7073596688,
+        "benchmark_avg_exposure": 53.6637819575,
+        "active_avg_exposure": 36.0435777113,
+        "factor_return": 7.5317480958,
+        "attribution_local_residual": 0.0271471148
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Construction Materials..",
+        "portfolio_avg_exposure": 81.1431375842,
+        "benchmark_avg_exposure": 99.8456261149,
+        "active_avg_exposure": -18.7024885307,
+        "factor_return": 7.2717715935,
+        "attribution_local_residual": -0.0136000225
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Capital Goods ex Bui..",
+        "portfolio_avg_exposure": -26.0986731402,
+        "benchmark_avg_exposure": 178.5129955594,
+        "active_avg_exposure": -204.6116686996,
+        "factor_return": 7.0910724593,
+        "attribution_local_residual": -0.1450916169
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Beta",
+        "portfolio_avg_exposure": -59.3615251005,
+        "benchmark_avg_exposure": 138.1021123839,
+        "active_avg_exposure": -197.4636374844,
+        "factor_return": 6.5952225067,
+        "attribution_local_residual": -0.1302316626
+      }
+    ],
+    "bottom_factors_by_return": [
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Mid Capitalization",
+        "portfolio_avg_exposure": -32.0613626432,
+        "benchmark_avg_exposure": 59.6281123256,
+        "active_avg_exposure": -91.6894749688,
+        "factor_return": -3.8707612964,
+        "attribution_local_residual": 0.0354908071
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Banks",
+        "portfolio_avg_exposure": -119.7351832639,
+        "benchmark_avg_exposure": -14.3142658851,
+        "active_avg_exposure": -105.4209173787,
+        "factor_return": -3.4351644411,
+        "attribution_local_residual": 0.0362138187
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Banks",
+        "portfolio_avg_exposure": -119.7351832639,
+        "benchmark_avg_exposure": -14.3142658851,
+        "active_avg_exposure": -105.4209173787,
+        "factor_return": -3.4351644411,
+        "attribution_local_residual": 0.0362138187
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Foreign Sensitivity",
+        "portfolio_avg_exposure": 218.4584314721,
+        "benchmark_avg_exposure": 139.7133686952,
+        "active_avg_exposure": 78.7450627769,
+        "factor_return": -2.4383124606,
+        "attribution_local_residual": -0.0192005068
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Health Care",
+        "portfolio_avg_exposure": 79.0823427138,
+        "benchmark_avg_exposure": 64.5413698062,
+        "active_avg_exposure": 14.5409729077,
+        "factor_return": -2.2641777673,
+        "attribution_local_residual": -0.0032923348
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Investment Quality",
+        "portfolio_avg_exposure": -79.1431368214,
+        "benchmark_avg_exposure": 102.0427789339,
+        "active_avg_exposure": -181.1859157553,
+        "factor_return": -1.3726875038,
+        "attribution_local_residual": 0.0248711642
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Industry",
+        "factor_name": "IN Diversified Financials an",
+        "portfolio_avg_exposure": -74.3333134911,
+        "benchmark_avg_exposure": -18.6000033096,
+        "active_avg_exposure": -55.7333101815,
+        "factor_return": -0.5561391445,
+        "attribution_local_residual": 0.0030995475
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Automobiles and Car..",
+        "portfolio_avg_exposure": 131.0664687289,
+        "benchmark_avg_exposure": -23.8319751375,
+        "active_avg_exposure": 154.8984438665,
+        "factor_return": -0.4103642786,
+        "attribution_local_residual": -0.0063564788
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Building Products an..",
+        "portfolio_avg_exposure": 16.3449459972,
+        "benchmark_avg_exposure": -45.5417337522,
+        "active_avg_exposure": 61.8866797494,
+        "factor_return": -0.3877711999,
+        "attribution_local_residual": -0.0023997872
+      },
+      {
+        "group_name": "IND",
+        "factor_group": "Country",
+        "factor_name": "IN Electronics and Semi..",
+        "portfolio_avg_exposure": 55.9696769865,
+        "benchmark_avg_exposure": 171.8321833406,
+        "active_avg_exposure": -115.8625063541,
+        "factor_return": -0.0628989556,
+        "attribution_local_residual": 0.0007287631
+      }
+    ]
+  }
+}

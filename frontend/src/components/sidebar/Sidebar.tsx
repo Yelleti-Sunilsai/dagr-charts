@@ -4,15 +4,25 @@ import { useDraggable } from '@dnd-kit/core';
 import { BarChart3, LineChart, PieChart, Activity } from 'lucide-react';
 
 const CHARTS = [
-  { id: 'line-chart-tool', type: 'line', label: 'Line Chart', icon: LineChart },
-  { id: 'bar-chart-tool', type: 'bar', label: 'Bar Chart', icon: BarChart3 },
-  { id: 'area-chart-tool', type: 'area', label: 'Area Chart', icon: Activity },
+  { id: 'daily-performance', type: 'line', dataset: 'daily_performance', label: 'Daily Performance', icon: LineChart },
+  { id: 'portfolio-returns', type: 'area', dataset: 'portfolio_returns', label: 'Portfolio Returns', icon: Activity },
+  { id: 'attribution-summary', type: 'bar', dataset: 'attribution_summary', label: 'Attribution Summary', icon: BarChart3 },
+  { id: 'factor-attribution', type: 'bar', dataset: 'factor_attribution', label: 'Factor Attribution', icon: BarChart3 },
+  { id: 'attribution-trend', type: 'line', dataset: 'attribution_trend', label: 'Attribution Trend', icon: LineChart },
+  { id: 'asset-attribution', type: 'bar', dataset: 'asset_attribution', label: 'Asset Attribution', icon: BarChart3 },
+  { id: 'asset-exposure', type: 'bar', dataset: 'asset_exposure_analysis', label: 'Asset Exposure', icon: BarChart3 },
+  { id: 'attribution-data-1', type: 'bar', dataset: 'attribution_data_1', label: 'Attribution Data 1', icon: BarChart3 },
+  { id: 'attribution-data-2', type: 'bar', dataset: 'attribution_data_2', label: 'Attribution Data 2', icon: BarChart3 },
+  { id: 'currency-attribution', type: 'bar', dataset: 'currency_attribution', label: 'Currency Attribution', icon: BarChart3 },
+  { id: 'factor-exposure', type: 'bar', dataset: 'factor_exposure_analysis', label: 'Factor Exposure', icon: BarChart3 },
+  { id: 'group-attr-trend', type: 'line', dataset: 'group_attribution_trend', label: 'Group Attr Trend', icon: LineChart },
+  { id: 'group-exposure', type: 'bar', dataset: 'group_exposure_analysis', label: 'Group Exposure', icon: BarChart3 },
 ];
 
-function DraggableChartCard({ id, type, label, icon: Icon }: any) {
+function DraggableChartCard({ id, type, dataset, label, icon: Icon }: any) {
   const { attributes, listeners, setNodeRef, isDragging } = useDraggable({
     id,
-    data: { type },
+    data: { type, dataset },
   });
 
   return (

@@ -1,0 +1,32 @@
+{
+  "source_file": "P:\\Proj\\Aegion Dynamics\\dagr v0\\tr_data\\final_data\\calc\\attribution_currency.json",
+  "attribution_currency": {
+    "as_of_date": "2026-01-27",
+    "local_excess_return": 12.32,
+    "currency_excess_return": 0.0,
+    "cross_product": 0.0,
+    "portfolio_contribution": 12.32,
+    "benchmark_contribution": 25.0,
+    "active_contribution": 12.32,
+    "currency_details": [
+      {
+        "currency": null,
+        "portfolio_weight_avg": 0.0,
+        "benchmark_weight_avg": 50.0,
+        "active_weight_avg": -50.0,
+        "fx_return": 0.0,
+        "currency_excess_effect": -0.0,
+        "cross_product": -0.0
+      },
+      {
+        "currency": "USD",
+        "portfolio_weight_avg": 199.99999999,
+        "benchmark_weight_avg": 50.0,
+        "active_weight_avg": 149.99999999,
+        "fx_return": 0.0,
+        "currency_excess_effect": 0.0,
+        "cross_product": 0.0
+      }
+    ]
+  }
+}

@@ -12,22 +12,15 @@ export function WidgetContainer({ id, type, x, y, width, height, config }: any) 
   const [data, setData] = useState<any>(config?.data || null);
 
   useEffect(() => {
-    // Simulate fetching data based on chart type from backend
-    // In production, we'd use a real endpoint like /api/charts/${type}
-    const endpointMap: Record<string, string> = {
-      line: 'http://localhost:8000/api/charts/sales',
-      bar: 'http://localhost:8000/api/charts/revenue',
-      area: 'http://localhost:8000/api/charts/analytics'
-    };
-
-    const fetchUrl = endpointMap[type];
-    if (fetchUrl && !config?.data) {
-      fetch(fetchUrl)
+    // Fetch data from backend using the dataset name if provided
+    const dataset = config?.dataset;
+    if (dataset && !config?.data) {
+      fetch(`http://localhost:8000/api/data/${dataset}`)
         .then(res => res.json())
         .then(json => setData(json))
         .catch(err => console.error("Error fetching data:", err));
     }
-  }, [type, config?.data]);
+  }, [type, config?.dataset, config?.data]);
 
   return (
     <Rnd
@@ -57,7 +50,7 @@ export function WidgetContainer({ id, type, x, y, width, height, config }: any) 
           </button>
         </div>
         <div className="flex-1 p-4 min-h-0">
-          <ChartRenderer type={type} data={data} />
+          <ChartRenderer type={type} data={data} dataset={config?.dataset} />
         </div>
       </Card>
     </Rnd>

@@ -1,0 +1,377 @@
+{
+  "source_file": "P:\\Proj\\Aegion Dynamics\\dagr v0\\tr_data\\final_data\\calc\\attribution.json",
+  "attribution": [
+    {
+      "as_of_date": "2026-01-27",
+      "period": "MTD",
+      "total": {
+        "portfolio_weight": 199.99999999,
+        "benchmark_weight": 100.0,
+        "portfolio_return": -0.1024947699,
+        "benchmark_return": -0.10249477,
+        "total_attribution": 1e-10
+      },
+      "group_results": [
+        {
+          "group_name": "Equity",
+          "period": "MTD",
+          "start_date": "2026-01-01",
+          "end_date": "2026-01-27",
+          "portfolio_weight": 100.0,
+          "benchmark_weight": 50.0,
+          "active_weight": 50.0,
+          "portfolio_return": 1.08333773,
+          "benchmark_return": -0.10249477,
+          "active_return": 1.1858325,
+          "portfolio_local_return": 1.08333773,
+          "benchmark_local_return": -0.10249477,
+          "active_local_return": 1.1858325,
+          "attribution_total": 1.1858325,
+          "attribution_allocation": 0.0,
+          "attribution_selection": 0.59291625,
+          "attribution_interaction": 0.59291625,
+          "attribution_base": 0.35574975,
+          "attribution_model_base": 0.2371665,
+          "attribution_market_timing": 0.0,
+          "attribution_local_residual": 0.11858325,
+          "attribution_industry": -0.0,
+          "validation_flag": "OK"
+        },
+        {
+          "group_name": "Fixed Income",
+          "period": "MTD",
+          "start_date": "2026-01-01",
+          "end_date": "2026-01-27",
+          "portfolio_weight": 99.99999999,
+          "benchmark_weight": 50.0,
+          "active_weight": 49.99999999,
+          "portfolio_return": -1.28832727,
+          "benchmark_return": -0.10249477,
+          "active_return": -1.1858325,
+          "portfolio_local_return": -1.28832727,
+          "benchmark_local_return": -0.10249477,
+          "active_local_return": -1.1858325,
+          "attribution_total": -1.1858324999,
+          "attribution_allocation": 0.0,
+          "attribution_selection": -0.59291625,
+          "attribution_interaction": -0.5929162499,
+          "attribution_base": -0.35574975,
+          "attribution_model_base": -0.2371665,
+          "attribution_market_timing": 0.0,
+          "attribution_local_residual": -0.11858325,
+          "attribution_industry": -0.0,
+          "validation_flag": "OK"
+        }
+      ],
+      "drill_down": [
+        {
+          "category": "Industry",
+          "attribution_value": -0.0256236925
+        },
+        {
+          "category": "Style",
+          "attribution_value": -0.003587317
+        },
+        {
+          "category": "Commodity",
+          "attribution_value": 0.0051247385
+        },
+        {
+          "category": "Eq. Implied Vol",
+          "attribution_value": 0.0040997908
+        },
+        {
+          "category": "Country",
+          "attribution_value": -0.0107619508
+        },
+        {
+          "category": "World",
+          "attribution_value": -0.020498954
+        },
+        {
+          "category": "Specific Return",
+          "attribution_value": -0.0121968776
+        }
+      ]
+    },
+    {
+      "as_of_date": "2026-01-27",
+      "period": "QTD",
+      "total": {
+        "portfolio_weight": 199.99999999,
+        "benchmark_weight": 100.0,
+        "portfolio_return": -0.1024947699,
+        "benchmark_return": -0.10249477,
+        "total_attribution": 1e-10
+      },
+      "group_results": [
+        {
+          "group_name": "Equity",
+          "period": "QTD",
+          "start_date": "2026-01-01",
+          "end_date": "2026-01-27",
+          "portfolio_weight": 100.0,
+          "benchmark_weight": 50.0,
+          "active_weight": 50.0,
+          "portfolio_return": 1.08333773,
+          "benchmark_return": -0.10249477,
+          "active_return": 1.1858325,
+          "portfolio_local_return": 1.08333773,
+          "benchmark_local_return": -0.10249477,
+          "active_local_return": 1.1858325,
+          "attribution_total": 1.1858325,
+          "attribution_allocation": 0.0,
+          "attribution_selection": 0.59291625,
+          "attribution_interaction": 0.59291625,
+          "attribution_base": 0.35574975,
+          "attribution_model_base": 0.2371665,
+          "attribution_market_timing": 0.0,
+          "attribution_local_residual": 0.11858325,
+          "attribution_industry": -0.0,
+          "validation_flag": "OK"
+        },
+        {
+          "group_name": "Fixed Income",
+          "period": "QTD",
+          "start_date": "2026-01-01",
+          "end_date": "2026-01-27",
+          "portfolio_weight": 99.99999999,
+          "benchmark_weight": 50.0,
+          "active_weight": 49.99999999,
+          "portfolio_return": -1.28832727,
+          "benchmark_return": -0.10249477,
+          "active_return": -1.1858325,
+          "portfolio_local_return": -1.28832727,
+          "benchmark_local_return": -0.10249477,
+          "active_local_return": -1.1858325,
+          "attribution_total": -1.1858324999,
+          "attribution_allocation": 0.0,
+          "attribution_selection": -0.59291625,
+          "attribution_interaction": -0.5929162499,
+          "attribution_base": -0.35574975,
+          "attribution_model_base": -0.2371665,
+          "attribution_market_timing": 0.0,
+          "attribution_local_residual": -0.11858325,
+          "attribution_industry": -0.0,
+          "validation_flag": "OK"
+        }
+      ],
+      "drill_down": [
+        {
+          "category": "Industry",
+          "attribution_value": -0.0256236925
+        },
+        {
+          "category": "Style",
+          "attribution_value": -0.003587317
+        },
+        {
+          "category": "Commodity",
+          "attribution_value": 0.0051247385
+        },
+        {
+          "category": "Eq. Implied Vol",
+          "attribution_value": 0.0040997908
+        },
+        {
+          "category": "Country",
+          "attribution_value": -0.0107619508
+        },
+        {
+          "category": "World",
+          "attribution_value": -0.020498954
+        },
+        {
+          "category": "Specific Return",
+          "attribution_value": -0.0121968776
+        }
+      ]
+    },
+    {
+      "as_of_date": "2026-01-27",
+      "period": "YTD",
+      "total": {
+        "portfolio_weight": 199.99999999,
+        "benchmark_weight": 100.0,
+        "portfolio_return": -0.1024947699,
+        "benchmark_return": -0.10249477,
+        "total_attribution": 1e-10
+      },
+      "group_results": [
+        {
+          "group_name": "Equity",
+          "period": "YTD",
+          "start_date": "2026-01-01",
+          "end_date": "2026-01-27",
+          "portfolio_weight": 100.0,
+          "benchmark_weight": 50.0,
+          "active_weight": 50.0,
+          "portfolio_return": 1.08333773,
+          "benchmark_return": -0.10249477,
+          "active_return": 1.1858325,
+          "portfolio_local_return": 1.08333773,
+          "benchmark_local_return": -0.10249477,
+          "active_local_return": 1.1858325,
+          "attribution_total": 1.1858325,
+          "attribution_allocation": 0.0,
+          "attribution_selection": 0.59291625,
+          "attribution_interaction": 0.59291625,
+          "attribution_base": 0.35574975,
+          "attribution_model_base": 0.2371665,
+          "attribution_market_timing": 0.0,
+          "attribution_local_residual": 0.11858325,
+          "attribution_industry": -0.0,
+          "validation_flag": "OK"
+        },
+        {
+          "group_name": "Fixed Income",
+          "period": "YTD",
+          "start_date": "2026-01-01",
+          "end_date": "2026-01-27",
+          "portfolio_weight": 99.99999999,
+          "benchmark_weight": 50.0,
+          "active_weight": 49.99999999,
+          "portfolio_return": -1.28832727,
+          "benchmark_return": -0.10249477,
+          "active_return": -1.1858325,
+          "portfolio_local_return": -1.28832727,
+          "benchmark_local_return": -0.10249477,
+          "active_local_return": -1.1858325,
+          "attribution_total": -1.1858324999,
+          "attribution_allocation": 0.0,
+          "attribution_selection": -0.59291625,
+          "attribution_interaction": -0.5929162499,
+          "attribution_base": -0.35574975,
+          "attribution_model_base": -0.2371665,
+          "attribution_market_timing": 0.0,
+          "attribution_local_residual": -0.11858325,
+          "attribution_industry": -0.0,
+          "validation_flag": "OK"
+        }
+      ],
+      "drill_down": [
+        {
+          "category": "Industry",
+          "attribution_value": -0.0256236925
+        },
+        {
+          "category": "Style",
+          "attribution_value": -0.003587317
+        },
+        {
+          "category": "Commodity",
+          "attribution_value": 0.0051247385
+        },
+        {
+          "category": "Eq. Implied Vol",
+          "attribution_value": 0.0040997908
+        },
+        {
+          "category": "Country",
+          "attribution_value": -0.0107619508
+        },
+        {
+          "category": "World",
+          "attribution_value": -0.020498954
+        },
+        {
+          "category": "Specific Return",
+          "attribution_value": -0.0121968776
+        }
+      ]
+    },
+    {
+      "as_of_date": "2026-01-27",
+      "period": "ITD",
+      "total": {
+        "portfolio_weight": 199.99999999,
+        "benchmark_weight": 100.0,
+        "portfolio_return": 9.4786978651,
+        "benchmark_return": 9.478697865,
+        "total_attribution": 2e-10
+      },
+      "group_results": [
+        {
+          "group_name": "Equity",
+          "period": "ITD",
+          "start_date": "2025-01-28",
+          "end_date": "2026-01-27",
+          "portfolio_weight": 100.0,
+          "benchmark_weight": 50.0,
+          "active_weight": 50.0,
+          "portfolio_return": 11.5507633,
+          "benchmark_return": 9.478697865,
+          "active_return": 2.072065435,
+          "portfolio_local_return": 11.5507633,
+          "benchmark_local_return": 9.478697865,
+          "active_local_return": 2.072065435,
+          "attribution_total": 2.072065435,
+          "attribution_allocation": 0.0,
+          "attribution_selection": 1.0360327175,
+          "attribution_interaction": 1.0360327175,
+          "attribution_base": 0.6216196305,
+          "attribution_model_base": 0.414413087,
+          "attribution_market_timing": 0.0,
+          "attribution_local_residual": 0.2072065435,
+          "attribution_industry": -0.0,
+          "validation_flag": "OK"
+        },
+        {
+          "group_name": "Fixed Income",
+          "period": "ITD",
+          "start_date": "2025-01-28",
+          "end_date": "2026-01-27",
+          "portfolio_weight": 99.99999999,
+          "benchmark_weight": 50.0,
+          "active_weight": 49.99999999,
+          "portfolio_return": 7.40663243,
+          "benchmark_return": 9.478697865,
+          "active_return": -2.072065435,
+          "portfolio_local_return": 7.40663243,
+          "benchmark_local_return": 9.478697865,
+          "active_local_return": -2.072065435,
+          "attribution_total": -2.0720654348,
+          "attribution_allocation": 0.0,
+          "attribution_selection": -1.0360327175,
+          "attribution_interaction": -1.0360327173,
+          "attribution_base": -0.6216196304,
+          "attribution_model_base": -0.414413087,
+          "attribution_market_timing": 0.0,
+          "attribution_local_residual": -0.2072065435,
+          "attribution_industry": -0.0,
+          "validation_flag": "OK"
+        }
+      ],
+      "drill_down": [
+        {
+          "category": "Industry",
+          "attribution_value": 2.3696744662
+        },
+        {
+          "category": "Style",
+          "attribution_value": 0.3317544253
+        },
+        {
+          "category": "Commodity",
+          "attribution_value": -0.4739348932
+        },
+        {
+          "category": "Eq. Implied Vol",
+          "attribution_value": -0.3791479146
+        },
+        {
+          "category": "Country",
+          "attribution_value": 0.9952632758
+        },
+        {
+          "category": "World",
+          "attribution_value": 1.895739573
+        },
+        {
+          "category": "Specific Return",
+          "attribution_value": 1.1279650459
+        }
+      ]
+    }
+  ]
+}

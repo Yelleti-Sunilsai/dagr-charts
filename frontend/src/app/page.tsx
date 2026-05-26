@@ -14,6 +14,7 @@ export default function Home() {
     if (over && over.id === 'workspace-canvas') {
       // Get data from dragged item
       const type = active.data.current?.type;
+      const dataset = active.data.current?.dataset;
       
       if (type) {
         // Drop coordinates roughly based on delta and a fixed offset from sidebar
@@ -25,6 +26,7 @@ export default function Home() {
           y: Math.max(0, 100 + delta.y),
           width: 400,
           height: 300,
+          config: dataset ? { dataset } : undefined,
         });
       }
     }

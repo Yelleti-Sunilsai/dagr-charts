@@ -1,0 +1,607 @@
+{
+  "source_file": "P:\\Proj\\Aegion Dynamics\\dagr v0\\tr_data\\final_data\\calc\\attribution_group_trend.json",
+  "attribution_group_trend": [
+    {
+      "group_name": "Equity",
+      "total_attribution": 3.1830330336,
+      "drill_down_totals": {
+        "Industry": 3.962605364,
+        "Style": 0.6604342273,
+        "Commodity": -1.3208684547,
+        "Eq. Implied Vol": -0.6604342273,
+        "Country": 1.981302682,
+        "World": 3.3021711367,
+        "Specific Return": 2.6417369094
+      },
+      "monthly_results": [
+        {
+          "group_name": "Equity",
+          "year": 2025,
+          "month": 1,
+          "month_name": "Jan 2025",
+          "portfolio_return": 0.8592767318,
+          "benchmark_return": -1.217195408,
+          "active_return": 2.0764721398,
+          "attribution_total": 0.7339372179,
+          "allocation": -0.304298852,
+          "selection": 1.0382360699,
+          "active_local": 2.0764721398,
+          "drill_down": {
+            "Industry": 0.311470821,
+            "Style": 0.0519118035,
+            "Commodity": -0.103823607,
+            "Eq. Implied Vol": -0.0519118035,
+            "Country": 0.1557354105,
+            "World": 0.2595590175,
+            "Specific Return": 0.207647214
+          }
+        },
+        {
+          "group_name": "Equity",
+          "year": 2025,
+          "month": 2,
+          "month_name": "Feb 2025",
+          "portfolio_return": 3.9158520981,
+          "benchmark_return": 0.5861918315,
+          "active_return": 3.3296602665,
+          "attribution_total": 1.8113780912,
+          "allocation": 0.1465479579,
+          "selection": 1.6648301333,
+          "active_local": 3.3296602665,
+          "drill_down": {
+            "Industry": 0.49944904,
+            "Style": 0.0832415067,
+            "Commodity": -0.1664830133,
+            "Eq. Implied Vol": -0.0832415067,
+            "Country": 0.24972452,
+            "World": 0.4162075333,
+            "Specific Return": 0.3329660267
+          }
+        },
+        {
+          "group_name": "Equity",
+          "year": 2025,
+          "month": 3,
+          "month_name": "Mar 2025",
+          "portfolio_return": -3.0042740758,
+          "benchmark_return": -5.2754130332,
+          "active_return": 2.2711389574,
+          "attribution_total": -0.1832837796,
+          "allocation": -1.3188532583,
+          "selection": 1.1355694787,
+          "active_local": 2.2711389574,
+          "drill_down": {
+            "Industry": 0.3406708436,
+            "Style": 0.0567784739,
+            "Commodity": -0.1135569479,
+            "Eq. Implied Vol": -0.0567784739,
+            "Country": 0.1703354218,
+            "World": 0.2838923697,
+            "Specific Return": 0.2271138957
+          }
+        },
+        {
+          "group_name": "Equity",
+          "year": 2025,
+          "month": 4,
+          "month_name": "Apr 2025",
+          "portfolio_return": -0.9855668978,
+          "benchmark_return": -0.6814444593,
+          "active_return": -0.3041224385,
+          "attribution_total": -0.3224223341,
+          "allocation": -0.1703611148,
+          "selection": -0.1520612193,
+          "active_local": -0.3041224385,
+          "drill_down": {
+            "Industry": 0.0456183658,
+            "Style": 0.007603061,
+            "Commodity": -0.0152061219,
+            "Eq. Implied Vol": -0.007603061,
+            "Country": 0.0228091829,
+            "World": 0.0380153048,
+            "Specific Return": 0.0304122439
+          }
+        },
+        {
+          "group_name": "Equity",
+          "year": 2025,
+          "month": 5,
+          "month_name": "May 2025",
+          "portfolio_return": 3.0992978476,
+          "benchmark_return": 4.8544651141,
+          "active_return": -1.7551672666,
+          "attribution_total": 0.3360326453,
+          "allocation": 1.2136162785,
+          "selection": -0.8775836333,
+          "active_local": -1.7551672666,
+          "drill_down": {
+            "Industry": 0.26327509,
+            "Style": 0.0438791817,
+            "Commodity": -0.0877583633,
+            "Eq. Implied Vol": -0.0438791817,
+            "Country": 0.131637545,
+            "World": 0.2193959083,
+            "Specific Return": 0.1755167267
+          }
+        },
+        {
+          "group_name": "Equity",
+          "year": 2025,
+          "month": 6,
+          "month_name": "Jun 2025",
+          "portfolio_return": -0.76094579,
+          "benchmark_return": 2.468022157,
+          "active_return": -3.228967947,
+          "attribution_total": -0.9974784342,
+          "allocation": 0.6170055392,
+          "selection": -1.6144839735,
+          "active_local": -3.228967947,
+          "drill_down": {
+            "Industry": 0.484345192,
+            "Style": 0.0807241987,
+            "Commodity": -0.1614483973,
+            "Eq. Implied Vol": -0.0807241987,
+            "Country": 0.242172596,
+            "World": 0.4036209934,
+            "Specific Return": 0.3228967947
+          }
+        },
+        {
+          "group_name": "Equity",
+          "year": 2025,
+          "month": 7,
+          "month_name": "Jul 2025",
+          "portfolio_return": 0.4663446203,
+          "benchmark_return": 2.733102953,
+          "active_return": -2.2667583327,
+          "attribution_total": -0.4501034281,
+          "allocation": 0.6832757382,
+          "selection": -1.1333791663,
+          "active_local": -2.2667583327,
+          "drill_down": {
+            "Industry": 0.3400137499,
+            "Style": 0.0566689583,
+            "Commodity": -0.1133379166,
+            "Eq. Implied Vol": -0.0566689583,
+            "Country": 0.170006875,
+            "World": 0.2833447916,
+            "Specific Return": 0.2266758333
+          }
+        },
+        {
+          "group_name": "Equity",
+          "year": 2025,
+          "month": 8,
+          "month_name": "Aug 2025",
+          "portfolio_return": 2.4306890214,
+          "benchmark_return": 1.9068841766,
+          "active_return": 0.5238048448,
+          "attribution_total": 0.7386234665,
+          "allocation": 0.4767210441,
+          "selection": 0.2619024224,
+          "active_local": 0.5238048448,
+          "drill_down": {
+            "Industry": 0.0785707267,
+            "Style": 0.0130951211,
+            "Commodity": -0.0261902422,
+            "Eq. Implied Vol": -0.0130951211,
+            "Country": 0.0392853634,
+            "World": 0.0654756056,
+            "Specific Return": 0.0523804845
+          }
+        },
+        {
+          "group_name": "Equity",
+          "year": 2025,
+          "month": 9,
+          "month_name": "Sep 2025",
+          "portfolio_return": -0.742038663,
+          "benchmark_return": 1.5584223694,
+          "active_return": -2.3004610324,
+          "attribution_total": -0.7606249239,
+          "allocation": 0.3896055924,
+          "selection": -1.1502305162,
+          "active_local": -2.3004610324,
+          "drill_down": {
+            "Industry": 0.3450691549,
+            "Style": 0.0575115258,
+            "Commodity": -0.1150230516,
+            "Eq. Implied Vol": -0.0575115258,
+            "Country": 0.1725345774,
+            "World": 0.2875576291,
+            "Specific Return": 0.2300461032
+          }
+        },
+        {
+          "group_name": "Equity",
+          "year": 2025,
+          "month": 10,
+          "month_name": "Oct 2025",
+          "portfolio_return": -0.845123023,
+          "benchmark_return": 1.7592820144,
+          "active_return": -2.6044050374,
+          "attribution_total": -0.8623820152,
+          "allocation": 0.4398205035,
+          "selection": -1.3022025187,
+          "active_local": -2.6044050374,
+          "drill_down": {
+            "Industry": 0.3906607556,
+            "Style": 0.0651101259,
+            "Commodity": -0.1302202519,
+            "Eq. Implied Vol": -0.0651101259,
+            "Country": 0.1953303778,
+            "World": 0.3255506297,
+            "Specific Return": 0.2604405037
+          }
+        },
+        {
+          "group_name": "Equity",
+          "year": 2025,
+          "month": 11,
+          "month_name": "Nov 2025",
+          "portfolio_return": 2.4323241658,
+          "benchmark_return": 0.4672240969,
+          "active_return": 1.9651000688,
+          "attribution_total": 1.0993560586,
+          "allocation": 0.1168060242,
+          "selection": 0.9825500344,
+          "active_local": 1.9651000688,
+          "drill_down": {
+            "Industry": 0.2947650103,
+            "Style": 0.0491275017,
+            "Commodity": -0.0982550034,
+            "Eq. Implied Vol": -0.0491275017,
+            "Country": 0.1473825052,
+            "World": 0.2456375086,
+            "Specific Return": 0.1965100069
+          }
+        },
+        {
+          "group_name": "Equity",
+          "year": 2025,
+          "month": 12,
+          "month_name": "Dec 2025",
+          "portfolio_return": 3.2853533808,
+          "benchmark_return": 0.6798751197,
+          "active_return": 2.605478261,
+          "attribution_total": 1.4727079104,
+          "allocation": 0.1699687799,
+          "selection": 1.3027391305,
+          "active_local": 2.605478261,
+          "drill_down": {
+            "Industry": 0.3908217392,
+            "Style": 0.0651369565,
+            "Commodity": -0.1302739131,
+            "Eq. Implied Vol": -0.0651369565,
+            "Country": 0.1954108696,
+            "World": 0.3256847826,
+            "Specific Return": 0.2605478261
+          }
+        },
+        {
+          "group_name": "Equity",
+          "year": 2026,
+          "month": 1,
+          "month_name": "Jan 2026",
+          "portfolio_return": 1.0833377348,
+          "benchmark_return": -0.1024947657,
+          "active_return": 1.1858325005,
+          "attribution_total": 0.5672925588,
+          "allocation": -0.0256236914,
+          "selection": 0.5929162503,
+          "active_local": 1.1858325005,
+          "drill_down": {
+            "Industry": 0.1778748751,
+            "Style": 0.0296458125,
+            "Commodity": -0.059291625,
+            "Eq. Implied Vol": -0.0296458125,
+            "Country": 0.0889374375,
+            "World": 0.1482290626,
+            "Specific Return": 0.1185832501
+          }
+        }
+      ]
+    },
+    {
+      "group_name": "Fixed Income",
+      "total_attribution": 1.6854280487,
+      "drill_down_totals": {
+        "Industry": 3.962605364,
+        "Style": 0.6604342273,
+        "Commodity": -1.3208684547,
+        "Eq. Implied Vol": -0.6604342273,
+        "Country": 1.981302682,
+        "World": 3.3021711367,
+        "Specific Return": 2.6417369094
+      },
+      "monthly_results": [
+        {
+          "group_name": "Fixed Income",
+          "year": 2025,
+          "month": 1,
+          "month_name": "Jan 2025",
+          "portfolio_return": -3.2936675477,
+          "benchmark_return": -1.217195408,
+          "active_return": -2.0764721398,
+          "attribution_total": -1.3425349219,
+          "allocation": -0.304298852,
+          "selection": -1.0382360699,
+          "active_local": -2.0764721398,
+          "drill_down": {
+            "Industry": 0.311470821,
+            "Style": 0.0519118035,
+            "Commodity": -0.103823607,
+            "Eq. Implied Vol": -0.0519118035,
+            "Country": 0.1557354105,
+            "World": 0.2595590175,
+            "Specific Return": 0.207647214
+          }
+        },
+        {
+          "group_name": "Fixed Income",
+          "year": 2025,
+          "month": 2,
+          "month_name": "Feb 2025",
+          "portfolio_return": -2.743468435,
+          "benchmark_return": 0.5861918315,
+          "active_return": -3.3296602665,
+          "attribution_total": -1.5182821754,
+          "allocation": 0.1465479579,
+          "selection": -1.6648301333,
+          "active_local": -3.3296602665,
+          "drill_down": {
+            "Industry": 0.49944904,
+            "Style": 0.0832415067,
+            "Commodity": -0.1664830133,
+            "Eq. Implied Vol": -0.0832415067,
+            "Country": 0.24972452,
+            "World": 0.4162075333,
+            "Specific Return": 0.3329660267
+          }
+        },
+        {
+          "group_name": "Fixed Income",
+          "year": 2025,
+          "month": 3,
+          "month_name": "Mar 2025",
+          "portfolio_return": -7.5465519906,
+          "benchmark_return": -5.2754130332,
+          "active_return": -2.2711389574,
+          "attribution_total": -2.4544227373,
+          "allocation": -1.3188532586,
+          "selection": -1.1355694787,
+          "active_local": -2.2711389574,
+          "drill_down": {
+            "Industry": 0.3406708436,
+            "Style": 0.0567784739,
+            "Commodity": -0.1135569479,
+            "Eq. Implied Vol": -0.0567784739,
+            "Country": 0.1703354218,
+            "World": 0.2838923697,
+            "Specific Return": 0.2271138957
+          }
+        },
+        {
+          "group_name": "Fixed Income",
+          "year": 2025,
+          "month": 4,
+          "month_name": "Apr 2025",
+          "portfolio_return": -0.3773220207,
+          "benchmark_return": -0.6814444593,
+          "active_return": 0.3041224385,
+          "attribution_total": -0.0182998956,
+          "allocation": -0.1703611148,
+          "selection": 0.1520612193,
+          "active_local": 0.3041224385,
+          "drill_down": {
+            "Industry": 0.0456183658,
+            "Style": 0.007603061,
+            "Commodity": -0.0152061219,
+            "Eq. Implied Vol": -0.007603061,
+            "Country": 0.0228091829,
+            "World": 0.0380153048,
+            "Specific Return": 0.0304122439
+          }
+        },
+        {
+          "group_name": "Fixed Income",
+          "year": 2025,
+          "month": 5,
+          "month_name": "May 2025",
+          "portfolio_return": 6.6096323807,
+          "benchmark_return": 4.8544651141,
+          "active_return": 1.7551672666,
+          "attribution_total": 2.0911999116,
+          "allocation": 1.2136162783,
+          "selection": 0.8775836333,
+          "active_local": 1.7551672666,
+          "drill_down": {
+            "Industry": 0.26327509,
+            "Style": 0.0438791817,
+            "Commodity": -0.0877583633,
+            "Eq. Implied Vol": -0.0438791817,
+            "Country": 0.131637545,
+            "World": 0.2193959083,
+            "Specific Return": 0.1755167267
+          }
+        },
+        {
+          "group_name": "Fixed Income",
+          "year": 2025,
+          "month": 6,
+          "month_name": "Jun 2025",
+          "portfolio_return": 5.696990104,
+          "benchmark_return": 2.468022157,
+          "active_return": 3.228967947,
+          "attribution_total": 2.2314895129,
+          "allocation": 0.6170055394,
+          "selection": 1.6144839735,
+          "active_local": 3.228967947,
+          "drill_down": {
+            "Industry": 0.484345192,
+            "Style": 0.0807241987,
+            "Commodity": -0.1614483973,
+            "Eq. Implied Vol": -0.0807241987,
+            "Country": 0.242172596,
+            "World": 0.4036209934,
+            "Specific Return": 0.3228967947
+          }
+        },
+        {
+          "group_name": "Fixed Income",
+          "year": 2025,
+          "month": 7,
+          "month_name": "Jul 2025",
+          "portfolio_return": 4.9998612857,
+          "benchmark_return": 2.733102953,
+          "active_return": 2.2667583327,
+          "attribution_total": 1.8166549045,
+          "allocation": 0.6832757381,
+          "selection": 1.1333791663,
+          "active_local": 2.2667583327,
+          "drill_down": {
+            "Industry": 0.3400137499,
+            "Style": 0.0566689583,
+            "Commodity": -0.1133379166,
+            "Eq. Implied Vol": -0.0566689583,
+            "Country": 0.170006875,
+            "World": 0.2833447916,
+            "Specific Return": 0.2266758333
+          }
+        },
+        {
+          "group_name": "Fixed Income",
+          "year": 2025,
+          "month": 8,
+          "month_name": "Aug 2025",
+          "portfolio_return": 1.3830793318,
+          "benchmark_return": 1.9068841766,
+          "active_return": -0.5238048448,
+          "attribution_total": 0.2148186216,
+          "allocation": 0.4767210441,
+          "selection": -0.2619024224,
+          "active_local": -0.5238048448,
+          "drill_down": {
+            "Industry": 0.0785707267,
+            "Style": 0.0130951211,
+            "Commodity": -0.0261902422,
+            "Eq. Implied Vol": -0.0130951211,
+            "Country": 0.0392853634,
+            "World": 0.0654756056,
+            "Specific Return": 0.0523804845
+          }
+        },
+        {
+          "group_name": "Fixed Income",
+          "year": 2025,
+          "month": 9,
+          "month_name": "Sep 2025",
+          "portfolio_return": 3.8588834019,
+          "benchmark_return": 1.5584223694,
+          "active_return": 2.3004610324,
+          "attribution_total": 1.5398361086,
+          "allocation": 0.3896055924,
+          "selection": 1.1502305162,
+          "active_local": 2.3004610324,
+          "drill_down": {
+            "Industry": 0.3450691549,
+            "Style": 0.0575115258,
+            "Commodity": -0.1150230516,
+            "Eq. Implied Vol": -0.0575115258,
+            "Country": 0.1725345774,
+            "World": 0.2875576291,
+            "Specific Return": 0.2300461032
+          }
+        },
+        {
+          "group_name": "Fixed Income",
+          "year": 2025,
+          "month": 10,
+          "month_name": "Oct 2025",
+          "portfolio_return": 4.3636870518,
+          "benchmark_return": 1.7592820144,
+          "active_return": 2.6044050374,
+          "attribution_total": 1.7420230222,
+          "allocation": 0.4398205035,
+          "selection": 1.3022025187,
+          "active_local": 2.6044050374,
+          "drill_down": {
+            "Industry": 0.3906607556,
+            "Style": 0.0651101259,
+            "Commodity": -0.1302202519,
+            "Eq. Implied Vol": -0.0651101259,
+            "Country": 0.1953303778,
+            "World": 0.3255506297,
+            "Specific Return": 0.2604405037
+          }
+        },
+        {
+          "group_name": "Fixed Income",
+          "year": 2025,
+          "month": 11,
+          "month_name": "Nov 2025",
+          "portfolio_return": -1.4978759719,
+          "benchmark_return": 0.4672240969,
+          "active_return": -1.9651000688,
+          "attribution_total": -0.8657440102,
+          "allocation": 0.1168060243,
+          "selection": -0.9825500344,
+          "active_local": -1.9651000688,
+          "drill_down": {
+            "Industry": 0.2947650103,
+            "Style": 0.0491275017,
+            "Commodity": -0.0982550034,
+            "Eq. Implied Vol": -0.0491275017,
+            "Country": 0.1473825052,
+            "World": 0.2456375086,
+            "Specific Return": 0.1965100069
+          }
+        },
+        {
+          "group_name": "Fixed Income",
+          "year": 2025,
+          "month": 12,
+          "month_name": "Dec 2025",
+          "portfolio_return": -1.9256031413,
+          "benchmark_return": 0.6798751197,
+          "active_return": -2.605478261,
+          "attribution_total": -1.1327703506,
+          "allocation": 0.1699687799,
+          "selection": -1.3027391305,
+          "active_local": -2.605478261,
+          "drill_down": {
+            "Industry": 0.3908217392,
+            "Style": 0.0651369565,
+            "Commodity": -0.1302739131,
+            "Eq. Implied Vol": -0.0651369565,
+            "Country": 0.1954108696,
+            "World": 0.3256847826,
+            "Specific Return": 0.2605478261
+          }
+        },
+        {
+          "group_name": "Fixed Income",
+          "year": 2026,
+          "month": 1,
+          "month_name": "Jan 2026",
+          "portfolio_return": -1.2883272662,
+          "benchmark_return": -0.1024947657,
+          "active_return": -1.1858325005,
+          "attribution_total": -0.6185399417,
+          "allocation": -0.0256236914,
+          "selection": -0.5929162503,
+          "active_local": -1.1858325005,
+          "drill_down": {
+            "Industry": 0.1778748751,
+            "Style": 0.0296458125,
+            "Commodity": -0.059291625,
+            "Eq. Implied Vol": -0.0296458125,
+            "Country": 0.0889374375,
+            "World": 0.1482290626,
+            "Specific Return": 0.1185832501
+          }
+        }
+      ]
+    }
+  ]
+}

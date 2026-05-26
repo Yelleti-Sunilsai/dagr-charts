@@ -13,38 +13,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.get("/")
-def read_root():
-    return {"message": "Analytics Workspace Builder Backend API"}
-
-@app.get("/api/charts/sales")
-def get_sales_data():
-    return [
-        {"name": "Jan", "value": random.randint(100, 1000)},
-        {"name": "Feb", "value": random.randint(100, 1000)},
-        {"name": "Mar", "value": random.randint(100, 1000)},
-        {"name": "Apr", "value": random.randint(100, 1000)},
-        {"name": "May", "value": random.randint(100, 1000)},
-        {"name": "Jun", "value": random.randint(100, 1000)},
-    ]
-
-@app.get("/api/charts/revenue")
-def get_revenue_data():
-    return [
-        {"name": "Q1", "value": random.randint(5000, 20000)},
-        {"name": "Q2", "value": random.randint(5000, 20000)},
-        {"name": "Q3", "value": random.randint(5000, 20000)},
-        {"name": "Q4", "value": random.randint(5000, 20000)},
-    ]
-
-@app.get("/api/charts/analytics")
-def get_analytics_data():
-    return [
-        {"name": "Mon", "value": random.randint(50, 200)},
-        {"name": "Tue", "value": random.randint(50, 200)},
-        {"name": "Wed", "value": random.randint(50, 200)},
-        {"name": "Thu", "value": random.randint(50, 200)},
-        {"name": "Fri", "value": random.randint(50, 200)},
-        {"name": "Sat", "value": random.randint(50, 200)},
-        {"name": "Sun", "value": random.randint(50, 200)},
-    ]
+@app.get("/api/data/{filename}")
+def get_data_file(filename: str):
+    import json
+    import os
+    
+    # Path to the data directory
+    # Adjust based on the actual location relative to main.py
+    data_dir = os.path.join(os.path.dirname(__file__), "..", "data")
+    file_path = os.path.join(data_dir, f"{filename}.json")
+    
+    if os.path.exists(file_path):
+        with open(file_path, "r") as f:
+            return json.load(f)
+    return {"error": "File not found"}
