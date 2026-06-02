@@ -51,12 +51,12 @@ export function WorkspaceCanvas() {
       )
     : widgets;
 
-  // Dynamic grid background
+  // Dynamic grid background lines (fade slightly when blocks are active)
   const gridStyle = isEditing
     ? {
         backgroundImage: `
-          linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px)
+          linear-gradient(to right, rgba(255, 255, 255, ${draggedWidget ? '0.01' : '0.03'}) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, ${draggedWidget ? '0.01' : '0.03'}) 1px, transparent 1px)
         `,
         backgroundSize: `${colWidth}px ${rowHeight}px`,
       }
@@ -64,6 +64,25 @@ export function WorkspaceCanvas() {
         backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px)',
         backgroundSize: '24px 24px',
       };
+
+  // Generate background slot blocks (AWS Console style - fine-grained 1x1 cells matching the grid)
+  const bgBlocks = [];
+  if (isEditing && draggedWidget) {
+    const cols = 24; // 24 columns
+    const rows = 24; // 24 rows covering the screen height
+
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        bgBlocks.push({
+          id: `bg-block-${r}-${c}`,
+          x: c,
+          y: r,
+          w: 1,
+          h: 1,
+        });
+      }
+    }
+  }
 
   return (
     <main 
@@ -79,18 +98,34 @@ export function WorkspaceCanvas() {
         paddingBottom: '200px', // Extra scrolling space at the bottom
       }}
     >
-      {/* Visual Snap Preview Ghost: AWS Console Solid Blue Block */}
-      {isEditing && draggedWidget && (
-        <div
-          className="absolute border-2 border-blue-500 bg-blue-500/30 rounded-xl pointer-events-none transition-all duration-100 z-0 shadow-lg shadow-blue-500/15"
-          style={{
-            left: draggedWidget.x * colWidth + gap / 2,
-            top: draggedWidget.y * rowHeight + gap / 2,
-            width: draggedWidget.w * colWidth - gap,
-            height: draggedWidget.h * rowHeight - gap,
-          }}
-        />
-      )}
+      {/* Background Slot Blocks: AWS Console Layout Grid Cells (1x1 squares) */}
+      {isEditing && draggedWidget && bgBlocks.map((block) => {
+        // Detect if the dragged chart covers this specific 1x1 grid cell
+        const isHighlighted = draggedWidget && (
+          block.x >= draggedWidget.x &&
+          block.x < draggedWidget.x + draggedWidget.w &&
+          block.y >= draggedWidget.y &&
+          block.y < draggedWidget.y + draggedWidget.h
+        );
+
+        return (
+          <div
+            key={block.id}
+            className={`absolute transition-all duration-100 z-0
+              ${isHighlighted 
+                ? 'border border-blue-500 bg-blue-500/25 shadow-md shadow-blue-500/5 rounded-md' 
+                : 'border border-white/[0.02] bg-neutral-900/5 rounded-sm'
+              }
+            `}
+            style={{
+              left: block.x * colWidth + gap / 2,
+              top: block.y * rowHeight + gap / 2,
+              width: colWidth - gap,
+              height: rowHeight - gap,
+            }}
+          />
+        );
+      })}
 
       {/* Render Widgets */}
       {displayWidgets.map((widget) => (

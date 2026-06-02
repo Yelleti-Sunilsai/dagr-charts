@@ -1,13 +1,13 @@
 [
   {
-    "id": "1251eebb-268c-4cc0-9197-eeeca0a262df",
+    "id": "0d91ecc1-d48b-4f48-a118-243bd6d0ecd5",
     "type": "bar",
-    "x": 12,
-    "y": 7,
-    "w": 8,
-    "h": 7,
+    "x": 1,
+    "y": 5,
+    "w": 11,
+    "h": 9,
     "config": {
-      "dataset": "factor_attribution"
+      "dataset": "asset_exposure_analysis"
     }
   },
   {
@@ -33,14 +33,14 @@
     }
   },
   {
-    "id": "0d91ecc1-d48b-4f48-a118-243bd6d0ecd5",
+    "id": "1251eebb-268c-4cc0-9197-eeeca0a262df",
     "type": "bar",
-    "x": 0,
-    "y": 5,
-    "w": 11,
-    "h": 7,
+    "x": 14,
+    "y": 6,
+    "w": 8,
+    "h": 6,
     "config": {
-      "dataset": "asset_exposure_analysis"
+      "dataset": "factor_attribution"
     }
   }
 ]

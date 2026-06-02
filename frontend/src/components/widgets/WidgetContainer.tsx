@@ -125,21 +125,21 @@ export function WidgetContainer({ id, type, x, y, w, h, config, colWidth, rowHei
         updateWidgetSize(id, snapW, snapH);
         updateWidgetPosition(id, snapX, snapY);
       }}
-      className="absolute z-10"
+      className={`absolute ${isInteracting ? 'z-30' : 'z-10'}`}
     >
       <Card 
-        className={`h-full w-full flex flex-col overflow-hidden bg-neutral-900 border transition-all duration-200 relative
+        className={`h-full w-full flex flex-col overflow-hidden transition-all duration-200 relative rounded-2xl
           ${isInteracting
-            ? 'border-blue-500 shadow-2xl shadow-blue-500/20 bg-neutral-900/90'
+            ? 'border-blue-500 shadow-2xl shadow-blue-500/20 bg-neutral-900/70 opacity-75'
             : isEditing 
-              ? 'border-neutral-700/80 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5' 
-              : 'border-neutral-800/80 shadow-md'
+              ? 'border-neutral-700/80 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5 bg-neutral-900' 
+              : 'border-neutral-800/80 shadow-md bg-neutral-900'
           }
         `}
       >
         {/* Semi-transparent blue overlay shown on the active card while rearranging */}
         {isInteracting && (
-          <div className="absolute inset-0 bg-blue-500/5 pointer-events-none rounded-xl z-20 border border-blue-500/20" />
+          <div className="absolute inset-0 bg-blue-500/10 pointer-events-none rounded-2xl z-20 border border-blue-500/20" />
         )}
 
         {/* Widget Header */}
