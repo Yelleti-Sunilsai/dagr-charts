@@ -1,46 +1,65 @@
-[
-  {
-    "id": "0d91ecc1-d48b-4f48-a118-243bd6d0ecd5",
-    "type": "bar",
-    "x": 1,
-    "y": 5,
-    "w": 11,
-    "h": 9,
-    "config": {
-      "dataset": "asset_exposure_analysis"
+{
+  "activePageId": "cfb8cd17-5b7c-4e48-b662-07106dfdf7e3",
+  "pages": [
+    {
+      "id": "default-page-1",
+      "name": "Page 1",
+      "widgets": [
+        {
+          "id": "1251eebb-268c-4cc0-9197-eeeca0a262df",
+          "type": "bar",
+          "x": 3,
+          "y": 11,
+          "w": 8,
+          "h": 4,
+          "config": {
+            "dataset": "factor_attribution"
+          }
+        },
+        {
+          "id": "default-1",
+          "type": "line",
+          "x": 0,
+          "y": 0,
+          "w": 16,
+          "h": 5,
+          "config": {
+            "dataset": "daily_performance"
+          }
+        },
+        {
+          "id": "default-2",
+          "type": "area",
+          "x": 2,
+          "y": 5,
+          "w": 9,
+          "h": 6,
+          "config": {
+            "dataset": "portfolio_returns"
+          }
+        },
+        {
+          "id": "0d91ecc1-d48b-4f48-a118-243bd6d0ecd5",
+          "type": "bar",
+          "x": 12,
+          "y": 5,
+          "w": 12,
+          "h": 9,
+          "config": {
+            "dataset": "asset_exposure_analysis"
+          }
+        }
+      ]
+    },
+    {
+      "id": "7b74d088-128d-4faf-9e0a-5c030de5b4e0",
+      "name": "Page 2",
+      "widgets": []
+    },
+    {
+      "id": "cfb8cd17-5b7c-4e48-b662-07106dfdf7e3",
+      "name": "Page 3",
+      "widgets": []
     }
-  },
-  {
-    "id": "default-1",
-    "type": "line",
-    "x": 0,
-    "y": 0,
-    "w": 13,
-    "h": 5,
-    "config": {
-      "dataset": "daily_performance"
-    }
-  },
-  {
-    "id": "default-2",
-    "type": "area",
-    "x": 14,
-    "y": 0,
-    "w": 9,
-    "h": 6,
-    "config": {
-      "dataset": "portfolio_returns"
-    }
-  },
-  {
-    "id": "1251eebb-268c-4cc0-9197-eeeca0a262df",
-    "type": "bar",
-    "x": 14,
-    "y": 6,
-    "w": 8,
-    "h": 6,
-    "config": {
-      "dataset": "factor_attribution"
-    }
-  }
-]
+  ]
+}

@@ -26,6 +26,15 @@ class WidgetSchema(BaseModel):
     h: int
     config: Optional[dict] = None
 
+class PageSchema(BaseModel):
+    id: str
+    name: str
+    widgets: List[WidgetSchema]
+
+class DashboardConfigSchema(BaseModel):
+    activePageId: str
+    pages: List[PageSchema]
+
 DEFAULT_LAYOUT = [
     {
         "id": "default-1",
@@ -56,6 +65,17 @@ DEFAULT_LAYOUT = [
     }
 ]
 
+DEFAULT_DASHBOARD_CONFIG = {
+    "activePageId": "default-page-1",
+    "pages": [
+        {
+            "id": "default-page-1",
+            "name": "Page 1",
+            "widgets": DEFAULT_LAYOUT
+        }
+    ]
+}
+
 @app.get("/api/data/{filename}")
 def get_data_file(filename: str):
     data_dir = os.path.join(os.path.dirname(__file__), "..", "data")
@@ -73,22 +93,39 @@ def get_layout():
     if os.path.exists(file_path):
         try:
             with open(file_path, "r") as f:
-                return json.load(f)
+                data = json.load(f)
+            # If the loaded data is a legacy list, wrap it in a single page
+            if isinstance(data, list):
+                migrated = {
+                    "activePageId": "default-page-1",
+                    "pages": [
+                        {
+                            "id": "default-page-1",
+                            "name": "Page 1",
+                            "widgets": data
+                        }
+                    ]
+                }
+                # Save migrated config
+                with open(file_path, "w") as f:
+                    json.dump(migrated, f, indent=2)
+                return migrated
+            return data
         except Exception:
-            return DEFAULT_LAYOUT
-    return DEFAULT_LAYOUT
+            return DEFAULT_DASHBOARD_CONFIG
+    return DEFAULT_DASHBOARD_CONFIG
 
 @app.post("/api/layout")
-def save_layout(layout: List[WidgetSchema]):
+def save_layout(config: DashboardConfigSchema):
     data_dir = os.path.join(os.path.dirname(__file__), "..", "data")
     file_path = os.path.join(data_dir, "layout.json")
     
-    # Save the layout
-    layout_data = [w.dict() for w in layout]
+    # Save the full config
     try:
         with open(file_path, "w") as f:
-            json.dump(layout_data, f, indent=2)
+            json.dump(config.dict(), f, indent=2)
         return {"status": "success"}
     except Exception as e:
         return {"status": "error", "message": str(e)}
+
 
