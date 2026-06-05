@@ -97,6 +97,8 @@ interface WorkspaceStore {
   updateWidgetPosition: (id: string, x: number, y: number) => void;
   updateWidgetSize: (id: string, w: number, h: number) => void;
   updateWidgetConfig: (id: string, config: any) => void;
+  activeConfigWidgetId: string | null;
+  setActiveConfigWidgetId: (id: string | null) => void;
 }
 
 export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
@@ -109,6 +111,9 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
   title: 'CloudWatch Dashboard',
   description: 'Resizing and grid snapping layout manager',
   hasUnsavedChanges: false,
+  activeConfigWidgetId: null,
+
+  setActiveConfigWidgetId: (activeConfigWidgetId) => set({ activeConfigWidgetId }),
 
   setTitle: (title) => {
     set({ title, hasUnsavedChanges: true });

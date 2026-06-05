@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Rnd } from 'react-rnd';
 import { useWorkspaceStore } from '@/store/workspaceStore';
 import { ChartRenderer } from '../renderer/ChartRenderer';
-import { Trash2, GripHorizontal } from 'lucide-react';
+import { Trash2, GripHorizontal, Settings } from 'lucide-react';
 import { Card } from '../ui/card';
 
 const DATASET_LABELS: Record<string, string> = {
@@ -29,7 +29,8 @@ export function WidgetContainer({ id, type, x, y, w, h, config, colWidth, rowHei
     updateWidgetSize, 
     removeWidget, 
     isEditing,
-    setDraggedWidget 
+    setDraggedWidget,
+    setActiveConfigWidgetId
   } = useWorkspaceStore();
   
   const [data, setData] = useState<any>(config?.data || null);
@@ -158,24 +159,40 @@ export function WidgetContainer({ id, type, x, y, w, h, config, colWidth, rowHei
           </div>
           
           <div className="flex items-center gap-1.5 shrink-0">
-            <span className="text-[10px] text-neutral-500 border border-neutral-800 rounded px-1.5 py-0.5 bg-neutral-950 font-medium uppercase">
+            <span className="text-[10px] text-neutral-500 border border-neutral-800 rounded px-1.5 py-0.5 bg-neutral-950 font-medium uppercase animate-in fade-in duration-100">
               {type}
             </span>
             {isEditing && (
-              <button 
-                onClick={() => removeWidget(id)}
-                className="p-1 hover:bg-red-500/10 text-neutral-500 hover:text-red-400 rounded transition-colors cursor-pointer"
-                title="Remove widget"
-              >
-                <Trash2 className="w-3.5 h-3.5" />
-              </button>
+              <>
+                <button 
+                  onClick={() => setActiveConfigWidgetId(id)}
+                  className="p-1 hover:bg-neutral-800 text-neutral-500 hover:text-blue-400 rounded transition-colors cursor-pointer"
+                  title="Configure widget"
+                >
+                  <Settings className="w-3.5 h-3.5" />
+                </button>
+                <button 
+                  onClick={() => removeWidget(id)}
+                  className="p-1 hover:bg-red-500/10 text-neutral-500 hover:text-red-400 rounded transition-colors cursor-pointer"
+                  title="Remove widget"
+                >
+                  <Trash2 className="w-3.5 h-3.5" />
+                </button>
+              </>
             )}
           </div>
         </div>
 
         {/* Widget Chart Content */}
-        <div className="flex-1 p-4 min-h-0 relative">
-          <ChartRenderer type={type} data={data} dataset={config?.dataset} />
+        <div 
+          className="flex-1 p-4 min-h-0 relative cursor-pointer hover:bg-neutral-800/5 transition-all duration-200"
+          onClick={(e) => {
+            if (isInteracting) return;
+            setActiveConfigWidgetId(id);
+          }}
+          title="Click to configure chart settings"
+        >
+          <ChartRenderer type={type} data={data} dataset={config?.dataset} config={config} />
           
           {/* Resize Corner Handle Overlay */}
           {isEditing && (

@@ -72,16 +72,16 @@ function transformChartData(datasetName: string | undefined, rawData: any) {
   return null;
 }
 
-export function ChartRenderer({ type, data, dataset }: { type: string; data?: any; dataset?: string }) {
+export function ChartRenderer({ type, data, dataset, config }: { type: string; data?: any; dataset?: string; config?: any }) {
   const transformedData = transformChartData(dataset, data);
 
   switch (type) {
     case 'line':
-      return <LineChartWidget data={transformedData} />;
+      return <LineChartWidget data={transformedData} config={config} />;
     case 'bar':
-      return <BarChartWidget data={transformedData} />;
+      return <BarChartWidget data={transformedData} config={config} />;
     case 'area':
-      return <AreaChartWidget data={transformedData} />;
+      return <AreaChartWidget data={transformedData} config={config} />;
     default:
       return <div className="flex h-full w-full items-center justify-center text-neutral-500">Unknown chart type</div>;
   }

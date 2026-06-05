@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 import { DndContext, DragEndEvent, DragOverlay } from '@dnd-kit/core';
 import { Sidebar, CHARTS } from '@/components/sidebar/Sidebar';
 import { WorkspaceCanvas } from '@/components/workspace/WorkspaceCanvas';
+import { WidgetConfigDialog } from '@/components/widgets/WidgetConfigDialog';
 import { useWorkspaceStore } from '@/store/workspaceStore';
 import { LayoutGrid, Plus, X, ChevronLeft, ChevronRight, Edit2 } from 'lucide-react';
 
@@ -431,6 +432,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <WidgetConfigDialog />
       <DragOverlay>
         {activeDragId ? (
           (() => {

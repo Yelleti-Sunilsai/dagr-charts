@@ -1,21 +1,10 @@
 {
-  "activePageId": "7b74d088-128d-4faf-9e0a-5c030de5b4e0",
+  "activePageId": "default-page-1",
   "pages": [
     {
       "id": "default-page-1",
       "name": "Page 1",
       "widgets": [
-        {
-          "id": "7d905af2-bae2-4fc2-b140-b193837961b1",
-          "type": "line",
-          "x": 3,
-          "y": 5,
-          "w": 8,
-          "h": 7,
-          "config": {
-            "dataset": "attribution_trend"
-          }
-        },
         {
           "id": "1251eebb-268c-4cc0-9197-eeeca0a262df",
           "type": "bar",
@@ -36,6 +25,24 @@
           "h": 9,
           "config": {
             "dataset": "asset_exposure_analysis"
+          }
+        },
+        {
+          "id": "7d905af2-bae2-4fc2-b140-b193837961b1",
+          "type": "line",
+          "x": 3,
+          "y": 4,
+          "w": 8,
+          "h": 7,
+          "config": {
+            "dataset": "factor_attribution",
+            "xAxis": "default",
+            "yAxis": "default",
+            "series": "",
+            "colorTheme": "blue",
+            "showGrid": true,
+            "showLegend": false,
+            "showTooltip": true
           }
         }
       ]
