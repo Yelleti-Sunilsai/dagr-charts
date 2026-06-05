@@ -1,15 +1,26 @@
 {
-  "activePageId": "cfb8cd17-5b7c-4e48-b662-07106dfdf7e3",
+  "activePageId": "7b74d088-128d-4faf-9e0a-5c030de5b4e0",
   "pages": [
     {
       "id": "default-page-1",
       "name": "Page 1",
       "widgets": [
         {
+          "id": "7d905af2-bae2-4fc2-b140-b193837961b1",
+          "type": "line",
+          "x": 3,
+          "y": 5,
+          "w": 8,
+          "h": 7,
+          "config": {
+            "dataset": "attribution_trend"
+          }
+        },
+        {
           "id": "1251eebb-268c-4cc0-9197-eeeca0a262df",
           "type": "bar",
           "x": 3,
-          "y": 11,
+          "y": 0,
           "w": 8,
           "h": 4,
           "config": {
@@ -17,32 +28,10 @@
           }
         },
         {
-          "id": "default-1",
-          "type": "line",
-          "x": 0,
-          "y": 0,
-          "w": 16,
-          "h": 5,
-          "config": {
-            "dataset": "daily_performance"
-          }
-        },
-        {
-          "id": "default-2",
-          "type": "area",
-          "x": 2,
-          "y": 5,
-          "w": 9,
-          "h": 6,
-          "config": {
-            "dataset": "portfolio_returns"
-          }
-        },
-        {
           "id": "0d91ecc1-d48b-4f48-a118-243bd6d0ecd5",
           "type": "bar",
           "x": 12,
-          "y": 5,
+          "y": 0,
           "w": 12,
           "h": 9,
           "config": {
@@ -54,12 +43,26 @@
     {
       "id": "7b74d088-128d-4faf-9e0a-5c030de5b4e0",
       "name": "Page 2",
-      "widgets": []
+      "widgets": [
+        {
+          "id": "34c1fdbf-c229-4ec4-af78-a233559cc660",
+          "type": "area",
+          "x": 0,
+          "y": 0,
+          "w": 8,
+          "h": 7,
+          "config": {
+            "dataset": "portfolio_returns"
+          }
+        }
+      ]
     },
     {
       "id": "cfb8cd17-5b7c-4e48-b662-07106dfdf7e3",
       "name": "Page 3",
       "widgets": []
     }
-  ]
+  ],
+  "title": "Sai's Dashboard",
+  "description": "Adding all the charts for the breif ideas"
 }

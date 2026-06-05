@@ -34,6 +34,8 @@ class PageSchema(BaseModel):
 class DashboardConfigSchema(BaseModel):
     activePageId: str
     pages: List[PageSchema]
+    title: Optional[str] = "CloudWatch Dashboard"
+    description: Optional[str] = "Resizing and grid snapping layout manager"
 
 DEFAULT_LAYOUT = [
     {

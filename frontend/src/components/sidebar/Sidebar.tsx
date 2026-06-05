@@ -3,7 +3,7 @@
 import { useDraggable } from '@dnd-kit/core';
 import { BarChart3, LineChart, PieChart, Activity } from 'lucide-react';
 
-const CHARTS = [
+export const CHARTS = [
   { id: 'daily-performance', type: 'line', dataset: 'daily_performance', label: 'Daily Performance', icon: LineChart },
   { id: 'portfolio-returns', type: 'area', dataset: 'portfolio_returns', label: 'Portfolio Returns', icon: Activity },
   { id: 'attribution-summary', type: 'bar', dataset: 'attribution_summary', label: 'Attribution Summary', icon: BarChart3 },

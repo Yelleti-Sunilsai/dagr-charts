@@ -72,10 +72,15 @@ interface WorkspaceStore {
   isEditing: boolean;
   backupWidgets: WorkspaceWidget[];
   draggedWidget: { id: string; x: number; y: number; w: number; h: number } | null;
+  title: string;
+  description: string;
+  hasUnsavedChanges: boolean;
+  setTitle: (title: string) => void;
+  setDescription: (description: string) => void;
   setEditing: (isEditing: boolean) => void;
   setDraggedWidget: (widget: { id: string; x: number; y: number; w: number; h: number } | null) => void;
   saveLayout: () => Promise<void>;
-  saveLayoutDirect: (pagesList: DashboardPage[], activeId: string) => Promise<void>;
+  saveLayoutDirect: (pagesList: DashboardPage[], activeId: string, title?: string, description?: string) => Promise<void>;
   cancelChanges: () => void;
   loadLayout: () => Promise<void>;
   
@@ -101,6 +106,17 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
   isEditing: true, // Always editing/resizable by default
   backupWidgets: [],
   draggedWidget: null,
+  title: 'CloudWatch Dashboard',
+  description: 'Resizing and grid snapping layout manager',
+  hasUnsavedChanges: false,
+
+  setTitle: (title) => {
+    set({ title, hasUnsavedChanges: true });
+  },
+
+  setDescription: (description) => {
+    set({ description, hasUnsavedChanges: true });
+  },
   
   setEditing: (isEditing) => {
     set({ isEditing });
@@ -108,8 +124,15 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
 
   setDraggedWidget: (draggedWidget) => set({ draggedWidget }),
 
-  saveLayoutDirect: async (pagesList: DashboardPage[], activeId: string) => {
-    const config = { activePageId: activeId, pages: pagesList };
+  saveLayoutDirect: async (pagesList: DashboardPage[], activeId: string, title?: string, description?: string) => {
+    const currentTitle = title !== undefined ? title : get().title;
+    const currentDescription = description !== undefined ? description : get().description;
+    const config = { 
+      activePageId: activeId, 
+      pages: pagesList,
+      title: currentTitle,
+      description: currentDescription
+    };
     try {
       const response = await fetch('http://localhost:8000/api/layout', {
         method: 'POST',
@@ -129,7 +152,8 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
   },
 
   saveLayout: async () => {
-    await get().saveLayoutDirect(get().pages, get().activePageId);
+    await get().saveLayoutDirect(get().pages, get().activePageId, get().title, get().description);
+    set({ hasUnsavedChanges: false });
   },
 
   cancelChanges: () => {
@@ -144,6 +168,8 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
         if (data && typeof data === 'object') {
           let activePageId = data.activePageId;
           let pages = data.pages;
+          let title = data.title || 'CloudWatch Dashboard';
+          let description = data.description || 'Resizing and grid snapping layout manager';
           
           // Legacy array loaded from backend
           if (Array.isArray(data)) {
@@ -176,6 +202,9 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
               pages: formattedPages,
               activePageId,
               widgets: activeWidgets,
+              title,
+              description,
+              hasUnsavedChanges: false,
             });
             return;
           }
@@ -196,6 +225,8 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
         const parsed = JSON.parse(saved);
         let activePageId = 'default-page-1';
         let pages: any[] = [];
+        let title = 'CloudWatch Dashboard';
+        let description = 'Resizing and grid snapping layout manager';
         
         if (Array.isArray(parsed)) {
           pages = [{
@@ -206,6 +237,8 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
         } else if (parsed && typeof parsed === 'object') {
           pages = parsed.pages || [];
           activePageId = parsed.activePageId || (pages[0]?.id || 'default-page-1');
+          title = parsed.title || 'CloudWatch Dashboard';
+          description = parsed.description || 'Resizing and grid snapping layout manager';
         }
         
         if (pages.length > 0) {
@@ -227,6 +260,9 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
             pages: formattedPages,
             activePageId,
             widgets: activePage ? activePage.widgets : [],
+            title,
+            description,
+            hasUnsavedChanges: false,
           });
           return;
         }
@@ -245,6 +281,9 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
       pages: [defaultPage],
       activePageId: 'default-page-1',
       widgets: [],
+      title: 'CloudWatch Dashboard',
+      description: 'Resizing and grid snapping layout manager',
+      hasUnsavedChanges: false,
     });
   },
 
@@ -253,7 +292,6 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
     set((state) => {
       const page = state.pages.find((p) => p.id === pageId);
       if (!page) return {};
-      get().saveLayoutDirect(state.pages, pageId);
       return { activePageId: pageId, widgets: page.widgets };
     });
   },
@@ -268,11 +306,11 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
         widgets: [],
       };
       const updatedPages = [...state.pages, newPage];
-      get().saveLayoutDirect(updatedPages, newPageId);
       return {
         pages: updatedPages,
         activePageId: newPageId,
         widgets: [],
+        hasUnsavedChanges: true,
       };
     });
   },
@@ -282,8 +320,7 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
       const updatedPages = state.pages.map((page) =>
         page.id === pageId ? { ...page, name } : page
       );
-      get().saveLayoutDirect(updatedPages, state.activePageId);
-      return { pages: updatedPages };
+      return { pages: updatedPages, hasUnsavedChanges: true };
     });
   },
 
@@ -303,11 +340,11 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
       const nextActivePage = updatedPages.find((p) => p.id === nextActiveId);
       const nextWidgets = nextActivePage ? nextActivePage.widgets : [];
       
-      get().saveLayoutDirect(updatedPages, nextActiveId);
       return {
         pages: updatedPages,
         activePageId: nextActiveId,
         widgets: nextWidgets,
+        hasUnsavedChanges: true,
       };
     });
   },
@@ -330,8 +367,7 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
         return {};
       }
       
-      get().saveLayoutDirect(newPages, state.activePageId);
-      return { pages: newPages };
+      return { pages: newPages, hasUnsavedChanges: true };
     });
   },
 
@@ -346,8 +382,7 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
         page.id === state.activePageId ? { ...page, widgets: compacted } : page
       );
       
-      get().saveLayoutDirect(updatedPages, state.activePageId);
-      return { widgets: compacted, pages: updatedPages };
+      return { widgets: compacted, pages: updatedPages, hasUnsavedChanges: true };
     }),
 
   removeWidget: (id) =>
@@ -359,8 +394,7 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
         page.id === state.activePageId ? { ...page, widgets: compacted } : page
       );
       
-      get().saveLayoutDirect(updatedPages, state.activePageId);
-      return { widgets: compacted, pages: updatedPages };
+      return { widgets: compacted, pages: updatedPages, hasUnsavedChanges: true };
     }),
 
   updateWidgetPosition: (id, x, y) =>
@@ -374,8 +408,7 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
         page.id === state.activePageId ? { ...page, widgets: compacted } : page
       );
       
-      get().saveLayoutDirect(updatedPages, state.activePageId);
-      return { widgets: compacted, pages: updatedPages };
+      return { widgets: compacted, pages: updatedPages, hasUnsavedChanges: true };
     }),
 
   updateWidgetSize: (id, w, h) =>
@@ -389,8 +422,7 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
         page.id === state.activePageId ? { ...page, widgets: compacted } : page
       );
       
-      get().saveLayoutDirect(updatedPages, state.activePageId);
-      return { widgets: compacted, pages: updatedPages };
+      return { widgets: compacted, pages: updatedPages, hasUnsavedChanges: true };
     }),
 
   updateWidgetConfig: (id, config) =>
@@ -403,7 +435,7 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
         page.id === state.activePageId ? { ...page, widgets: updated } : page
       );
       
-      return { widgets: updated, pages: updatedPages };
+      return { widgets: updated, pages: updatedPages, hasUnsavedChanges: true };
     }),
 }));
 
