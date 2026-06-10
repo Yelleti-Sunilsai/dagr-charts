@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from 'react';
-import { DndContext, DragEndEvent, DragOverlay } from '@dnd-kit/core';
+import { DndContext, DragEndEvent, DragOverlay, DragMoveEvent } from '@dnd-kit/core';
 import { Sidebar, CHARTS } from '@/components/sidebar/Sidebar';
 import { WorkspaceCanvas } from '@/components/workspace/WorkspaceCanvas';
 import { WidgetConfigDialog } from '@/components/widgets/WidgetConfigDialog';
@@ -24,12 +24,22 @@ export default function Home() {
     setTitle,
     setDescription,
     hasUnsavedChanges,
-    saveLayout
+    saveLayout,
+    setDraggedWidget,
+    activeConfigWidgetId
   } = useWorkspaceStore();
 
   const [editingPageId, setEditingPageId] = useState<string | null>(null);
   const [editingName, setEditingName] = useState<string>('');
   const editInputRef = useRef<HTMLInputElement>(null);
+
+  // Mounted state to prevent SSR hydration mismatch
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
 
   // Active dragging card state
   const [activeDragId, setActiveDragId] = useState<string | null>(null);
@@ -45,8 +55,10 @@ export default function Home() {
 
   // Load layout on initial mount
   useEffect(() => {
-    loadLayout();
-  }, [loadLayout]);
+    if (mounted) {
+      loadLayout();
+    }
+  }, [loadLayout, mounted]);
 
   // Keyboard shortcut listener for Ctrl+S
   useEffect(() => {
@@ -145,12 +157,59 @@ export default function Home() {
     setActiveDragId(event.active.id);
   };
 
+  const handleDragMove = (event: DragMoveEvent) => {
+    const { active, over } = event;
+    if (over && over.id === 'workspace-canvas') {
+      const type = active.data.current?.type;
+      
+      if (type) {
+        const activator = event.activatorEvent as MouseEvent;
+        const delta = event.delta;
+        
+        const clientX = activator.clientX + delta.x;
+        const clientY = activator.clientY + delta.y;
+        
+        const canvasElement = document.getElementById('workspace-canvas');
+        if (canvasElement && clientX !== undefined && clientY !== undefined) {
+          const rect = canvasElement.getBoundingClientRect();
+          const relativeX = clientX - rect.left + canvasElement.scrollLeft;
+          const relativeY = clientY - rect.top + canvasElement.scrollTop;
+          
+          const canvasWidth = rect.width;
+          const colWidth = Math.floor(canvasWidth / 24);
+          const rowHeight = 50;
+          
+          const defaultW = 8;
+          const defaultH = 7;
+          
+          let gridX = Math.round((relativeX - (defaultW * colWidth) / 2) / colWidth);
+          let gridY = Math.round((relativeY - (defaultH * rowHeight) / 2) / rowHeight);
+          
+          gridX = Math.max(0, Math.min(24 - defaultW, gridX));
+          gridY = Math.max(0, gridY);
+          
+          setDraggedWidget({
+            id: active.id as string,
+            x: gridX,
+            y: gridY,
+            w: defaultW,
+            h: defaultH,
+          });
+        }
+      }
+    } else {
+      setDraggedWidget(null);
+    }
+  };
+
   const handleDragCancel = () => {
     setActiveDragId(null);
+    setDraggedWidget(null);
   };
 
   const handleDragEnd = (event: DragEndEvent) => {
     setActiveDragId(null);
+    setDraggedWidget(null);
     const { active, over } = event;
 
     if (over && over.id === 'workspace-canvas') {
@@ -158,31 +217,28 @@ export default function Home() {
       const dataset = active.data.current?.dataset;
       
       if (type) {
-        // We get the original event to locate pointer position
         const activator = event.activatorEvent as MouseEvent;
-        const clientX = activator.clientX;
-        const clientY = activator.clientY;
+        const delta = event.delta;
+        
+        const clientX = activator.clientX + delta.x;
+        const clientY = activator.clientY + delta.y;
 
         const canvasElement = document.getElementById('workspace-canvas');
         if (canvasElement && clientX !== undefined && clientY !== undefined) {
           const rect = canvasElement.getBoundingClientRect();
-          const relativeX = clientX - rect.left;
-          const relativeY = clientY - rect.top;
+          const relativeX = clientX - rect.left + canvasElement.scrollLeft;
+          const relativeY = clientY - rect.top + canvasElement.scrollTop;
 
           const canvasWidth = rect.width;
           const colWidth = Math.floor(canvasWidth / 24);
-          const rowHeight = 50; // Row unit
+          const rowHeight = 50;
 
-          // Default width: 8 columns, height: 7 rows
           const defaultW = 8;
           const defaultH = 7;
 
-          // Convert client offsets to grid cell indices
-          // Subtract half the width/height to center the drop on the cursor
           let gridX = Math.round((relativeX - (defaultW * colWidth) / 2) / colWidth);
           let gridY = Math.round((relativeY - (defaultH * rowHeight) / 2) / rowHeight);
 
-          // Boundaries clamp
           gridX = Math.max(0, Math.min(24 - defaultW, gridX));
           gridY = Math.max(0, gridY);
 
@@ -195,7 +251,6 @@ export default function Home() {
             config: dataset ? { dataset } : undefined,
           });
         } else {
-          // Fallback placement
           addWidget({
             type,
             x: 0,
@@ -209,9 +264,14 @@ export default function Home() {
     }
   };
 
+  if (!mounted) {
+    return <div className="flex h-screen w-full bg-black text-white font-sans overflow-hidden" />;
+  }
+
   return (
     <DndContext 
       onDragStart={handleDragStart} 
+      onDragMove={handleDragMove}
       onDragEnd={handleDragEnd} 
       onDragCancel={handleDragCancel}
     >
@@ -432,7 +492,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <WidgetConfigDialog />
+      <WidgetConfigDialog key={activeConfigWidgetId || 'closed'} />
       <DragOverlay>
         {activeDragId ? (
           (() => {

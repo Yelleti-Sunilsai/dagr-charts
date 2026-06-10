@@ -139,7 +139,7 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
       description: currentDescription
     };
     try {
-      const response = await fetch('http://localhost:8000/api/layout', {
+      const response = await fetch('http://127.0.0.1:8000/api/layout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(config),
@@ -167,7 +167,7 @@ export const useWorkspaceStore = create<WorkspaceStore>((set, get) => ({
 
   loadLayout: async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/layout');
+      const response = await fetch('http://127.0.0.1:8000/api/layout');
       if (response.ok) {
         const data = await response.json();
         if (data && typeof data === 'object') {

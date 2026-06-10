@@ -6,40 +6,83 @@
       "name": "Page 1",
       "widgets": [
         {
-          "id": "1251eebb-268c-4cc0-9197-eeeca0a262df",
+          "id": "53a084d8-bf16-436a-923f-6e2065620364",
+          "type": "area",
+          "x": 10,
+          "y": 8,
+          "w": 6,
+          "h": 4,
+          "config": {
+            "dataset": "portfolio_returns",
+            "xAxis": "default",
+            "yAxis": "default",
+            "series": "",
+            "colorTheme": "purple",
+            "showGrid": true,
+            "showLegend": false,
+            "showTooltip": true
+          }
+        },
+        {
+          "id": "000e0fb6-52f3-4a4f-a1e3-7b1198166535",
           "type": "bar",
-          "x": 3,
+          "x": 0,
           "y": 0,
           "w": 8,
-          "h": 4,
+          "h": 7,
+          "config": {
+            "dataset": "attribution_summary",
+            "xAxis": "category",
+            "yAxis": "daily_return",
+            "series": "",
+            "colorTheme": "blue",
+            "showGrid": true,
+            "showLegend": false,
+            "showTooltip": true
+          }
+        },
+        {
+          "id": "269d594b-be7b-4d19-890f-c47f5adcbb7a",
+          "type": "bar",
+          "x": 14,
+          "y": 0,
+          "w": 8,
+          "h": 7,
           "config": {
             "dataset": "factor_attribution"
           }
         },
         {
-          "id": "0d91ecc1-d48b-4f48-a118-243bd6d0ecd5",
-          "type": "bar",
-          "x": 12,
-          "y": 0,
-          "w": 12,
-          "h": 9,
-          "config": {
-            "dataset": "asset_exposure_analysis"
-          }
-        },
-        {
-          "id": "7d905af2-bae2-4fc2-b140-b193837961b1",
+          "id": "d3912d1e-5c6e-4862-97e2-f404e44fd87d",
           "type": "line",
-          "x": 3,
-          "y": 4,
+          "x": 0,
+          "y": 7,
           "w": 8,
           "h": 7,
           "config": {
-            "dataset": "factor_attribution",
+            "dataset": "daily_performance",
+            "xAxis": "security_name",
+            "yAxis": "factor_return",
+            "series": "",
+            "colorTheme": "blue",
+            "showGrid": true,
+            "showLegend": false,
+            "showTooltip": true
+          }
+        },
+        {
+          "id": "62f793e4-119a-440b-9ee0-fc11b0ce5420",
+          "type": "line",
+          "x": 0,
+          "y": 14,
+          "w": 17,
+          "h": 8,
+          "config": {
+            "dataset": "daily_performance",
             "xAxis": "default",
             "yAxis": "default",
             "series": "",
-            "colorTheme": "blue",
+            "colorTheme": "amber",
             "showGrid": true,
             "showLegend": false,
             "showTooltip": true
@@ -70,6 +113,6 @@
       "widgets": []
     }
   ],
-  "title": "Sai's Dashboard",
-  "description": "Adding all the charts for the breif ideas"
+  "title": "Dashboard BUilder",
+  "description": "Some charts"
 }

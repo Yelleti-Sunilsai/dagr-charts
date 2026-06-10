@@ -39,7 +39,7 @@ export function WidgetContainer({ id, type, x, y, w, h, config, colWidth, rowHei
   useEffect(() => {
     const dataset = config?.dataset;
     if (dataset && !config?.data) {
-      fetch(`http://localhost:8000/api/data/${dataset}`)
+      fetch(`http://127.0.0.1:8000/api/data/${dataset}`)
         .then(res => res.json())
         .then(json => setData(json))
         .catch(err => console.error("Error fetching data:", err));
@@ -107,8 +107,8 @@ export function WidgetContainer({ id, type, x, y, w, h, config, colWidth, rowHei
         snapW = Math.max(2, Math.min(24, snapW));
         snapH = Math.max(2, snapH);
         
-        let snapX = Math.round((position.x - gap / 2) / colWidth);
-        let snapY = Math.round((position.y - gap / 2) / rowHeight);
+        const snapX = Math.round((position.x - gap / 2) / colWidth);
+        const snapY = Math.round((position.y - gap / 2) / rowHeight);
         
         setDraggedWidget({ id, x: snapX, y: snapY, w: snapW, h: snapH });
       }}
@@ -120,8 +120,8 @@ export function WidgetContainer({ id, type, x, y, w, h, config, colWidth, rowHei
         snapW = Math.max(2, Math.min(24, snapW));
         snapH = Math.max(2, snapH);
         
-        let snapX = Math.round((position.x - gap / 2) / colWidth);
-        let snapY = Math.round((position.y - gap / 2) / rowHeight);
+        const snapX = Math.round((position.x - gap / 2) / colWidth);
+        const snapY = Math.round((position.y - gap / 2) / rowHeight);
         
         updateWidgetSize(id, snapW, snapH);
         updateWidgetPosition(id, snapX, snapY);

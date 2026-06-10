@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useWorkspaceStore } from '@/store/workspaceStore';
-import { X, Sliders, Settings, Check, HelpCircle } from 'lucide-react';
+import { X, Settings, Check } from 'lucide-react';
 
 const DATASET_LABELS: Record<string, string> = {
   daily_performance: 'Daily Performance',
@@ -60,31 +60,19 @@ export function WidgetConfigDialog() {
 
   const widget = widgets.find((w) => w.id === activeConfigWidgetId);
 
-  // Local state for the settings form
-  const [dataset, setDataset] = useState('');
-  const [xAxis, setXAxis] = useState('default');
-  const [yAxis, setYAxis] = useState('default');
-  const [series, setSeries] = useState('');
-  const [colorTheme, setColorTheme] = useState('blue');
-  const [showGrid, setShowGrid] = useState(true);
-  const [showLegend, setShowLegend] = useState(false);
-  const [showTooltip, setShowTooltip] = useState(true);
+  const initialConfig = widget?.config || {};
 
-  // Sync local state when the active widget changes
-  useEffect(() => {
-    if (widget) {
-      const config = widget.config || {};
-      setDataset(config.dataset || '');
-      setXAxis(config.xAxis || 'default');
-      setYAxis(config.yAxis || 'default');
-      setSeries(config.series || '');
-      setColorTheme(config.colorTheme || 'blue');
-      setShowGrid(config.showGrid !== undefined ? config.showGrid : true);
-      setShowLegend(config.showLegend !== undefined ? config.showLegend : false);
-      setShowTooltip(config.showTooltip !== undefined ? config.showTooltip : true);
-    }
-  }, [widget, activeConfigWidgetId]);
+  // Local state for the settings form initialized on mount
+  const [dataset, setDataset] = useState(initialConfig.dataset || '');
+  const [xAxis, setXAxis] = useState(initialConfig.xAxis || 'default');
+  const [yAxis, setYAxis] = useState(initialConfig.yAxis || 'default');
+  const [series, setSeries] = useState(initialConfig.series || '');
+  const [colorTheme, setColorTheme] = useState(initialConfig.colorTheme || 'blue');
+  const [showGrid, setShowGrid] = useState(initialConfig.showGrid !== false);
+  const [showLegend, setShowLegend] = useState(initialConfig.showLegend === true);
+  const [showTooltip, setShowTooltip] = useState(initialConfig.showTooltip !== false);
 
+  // If no widget is active, we don't render anything
   if (!widget) return null;
 
   const handleSave = async (e: React.FormEvent) => {
