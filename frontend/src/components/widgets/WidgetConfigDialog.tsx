@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useWorkspaceStore } from '@/store/workspaceStore';
-import { X, Settings, Check } from 'lucide-react';
+import { X, Settings } from 'lucide-react';
 
 const DATASET_LABELS: Record<string, string> = {
   daily_performance: 'Daily Performance',
@@ -20,23 +20,7 @@ const DATASET_LABELS: Record<string, string> = {
   group_exposure_analysis: 'Group Exposure',
 };
 
-const COLOR_THEMES = [
-  { value: 'blue', label: 'Classic Blue', hex: '#3b82f6', bg: 'bg-blue-500' },
-  { value: 'green', label: 'Emerald Green', hex: '#10b981', bg: 'bg-emerald-500' },
-  { value: 'amber', label: 'Amber Gold', hex: '#f59e0b', bg: 'bg-amber-500' },
-  { value: 'purple', label: 'Royal Purple', hex: '#8b5cf6', bg: 'bg-purple-500' },
-  { value: 'rose', label: 'Rose Red', hex: '#f43f5e', bg: 'bg-rose-500' },
-  { value: 'teal', label: 'Vibrant Teal', hex: '#14b8a6', bg: 'bg-teal-500' },
-];
 
-const AXIS_OPTIONS = [
-  { value: 'default', label: 'Default Column' },
-  { value: 'date', label: 'Date / Time' },
-  { value: 'category', label: 'Category Name' },
-  { value: 'security_name', label: 'Security / Asset Name' },
-  { value: 'factor_name', label: 'Factor Name' },
-  { value: 'currency', label: 'Currency Code' },
-];
 
 const Y_AXIS_OPTIONS = [
   { value: 'default', label: 'Default Metric' },
@@ -58,7 +42,7 @@ export function WidgetConfigDialog() {
     saveLayout 
   } = useWorkspaceStore();
 
-  const widget = widgets.find((w) => w.id === activeConfigWidgetId);
+  const widget = widgets.find((w: any) => w.id === activeConfigWidgetId);
 
   const initialConfig = widget?.config || {};
 
@@ -150,35 +134,18 @@ export function WidgetConfigDialog() {
             </select>
           </div>
 
-          {/* Axes Grid: Two columns */}
-          <div className="grid grid-cols-2 gap-4">
-            {/* X-Axis */}
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-neutral-300">X-Axis Column</label>
-              <select
-                value={xAxis}
-                onChange={(e) => setXAxis(e.target.value)}
-                className="w-full bg-neutral-900 border border-neutral-800 focus:border-blue-500/80 focus:ring-1 focus:ring-blue-500 text-neutral-200 text-sm rounded-lg px-3 py-2 outline-none transition-all"
-              >
-                {AXIS_OPTIONS.map((opt) => (
-                  <option key={opt.value} value={opt.value}>{opt.label}</option>
-                ))}
-              </select>
-            </div>
-
-            {/* Y-Axis */}
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-neutral-300">Y-Axis Metric</label>
-              <select
-                value={yAxis}
-                onChange={(e) => setYAxis(e.target.value)}
-                className="w-full bg-neutral-900 border border-neutral-800 focus:border-blue-500/80 focus:ring-1 focus:ring-blue-500 text-neutral-200 text-sm rounded-lg px-3 py-2 outline-none transition-all"
-              >
-                {Y_AXIS_OPTIONS.map((opt) => (
-                  <option key={opt.value} value={opt.value}>{opt.label}</option>
-                ))}
-              </select>
-            </div>
+          {/* Y-Axis */}
+          <div className="space-y-2">
+            <label className="text-xs font-bold text-neutral-300">Y-Axis Metric</label>
+            <select
+              value={yAxis}
+              onChange={(e) => setYAxis(e.target.value)}
+              className="w-full bg-neutral-900 border border-neutral-800 focus:border-blue-500/80 focus:ring-1 focus:ring-blue-500 text-neutral-200 text-sm rounded-lg px-3 py-2 outline-none transition-all"
+            >
+              {Y_AXIS_OPTIONS.map((opt) => (
+                <option key={opt.value} value={opt.value}>{opt.label}</option>
+              ))}
+            </select>
           </div>
 
           {/* Series Configuration */}
@@ -193,32 +160,7 @@ export function WidgetConfigDialog() {
             />
           </div>
 
-          {/* Color/Theme Picker */}
-          <div className="space-y-2">
-            <label className="text-xs font-bold text-neutral-300">Color Theme</label>
-            <div className="grid grid-cols-3 gap-2">
-              {COLOR_THEMES.map((theme) => {
-                const isSelected = colorTheme === theme.value;
-                return (
-                  <button
-                    key={theme.value}
-                    type="button"
-                    onClick={() => setColorTheme(theme.value)}
-                    className={`flex items-center gap-2 p-2 rounded-lg border text-xs font-medium cursor-pointer transition-all duration-150 text-left
-                      ${isSelected 
-                        ? 'bg-neutral-900 border-blue-500/80 text-white shadow-md shadow-blue-500/5' 
-                        : 'bg-neutral-950/40 border-neutral-850 text-neutral-450 hover:bg-neutral-900/40 hover:text-neutral-200'
-                      }
-                    `}
-                  >
-                    <span className={`w-3 h-3 rounded-full ${theme.bg} shrink-0`} />
-                    <span className="truncate">{theme.label}</span>
-                    {isSelected && <Check className="w-3.5 h-3.5 text-blue-400 ml-auto shrink-0" />}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+
 
           {/* Interactive Chart Options (Grid, Legend, Tooltip) */}
           <div className="space-y-3 pt-2">

@@ -9,15 +9,15 @@ import { useWorkspaceStore } from '@/store/workspaceStore';
 import { LayoutGrid, Plus, X, ChevronLeft, ChevronRight, Edit2 } from 'lucide-react';
 
 export default function Home() {
-  const { 
-    pages, 
-    activePageId, 
-    setActivePage, 
-    addPage, 
-    renamePage, 
-    removePage, 
+  const {
+    pages,
+    activePageId,
+    setActivePage,
+    addPage,
+    renamePage,
+    removePage,
     movePage,
-    addWidget, 
+    addWidget,
     loadLayout,
     title,
     description,
@@ -161,33 +161,33 @@ export default function Home() {
     const { active, over } = event;
     if (over && over.id === 'workspace-canvas') {
       const type = active.data.current?.type;
-      
+
       if (type) {
         const activator = event.activatorEvent as MouseEvent;
         const delta = event.delta;
-        
+
         const clientX = activator.clientX + delta.x;
         const clientY = activator.clientY + delta.y;
-        
+
         const canvasElement = document.getElementById('workspace-canvas');
         if (canvasElement && clientX !== undefined && clientY !== undefined) {
           const rect = canvasElement.getBoundingClientRect();
           const relativeX = clientX - rect.left + canvasElement.scrollLeft;
           const relativeY = clientY - rect.top + canvasElement.scrollTop;
-          
+
           const canvasWidth = rect.width;
           const colWidth = Math.floor(canvasWidth / 24);
           const rowHeight = 50;
-          
+
           const defaultW = 8;
           const defaultH = 7;
-          
+
           let gridX = Math.round((relativeX - (defaultW * colWidth) / 2) / colWidth);
           let gridY = Math.round((relativeY - (defaultH * rowHeight) / 2) / rowHeight);
-          
+
           gridX = Math.max(0, Math.min(24 - defaultW, gridX));
           gridY = Math.max(0, gridY);
-          
+
           setDraggedWidget({
             id: active.id as string,
             x: gridX,
@@ -215,11 +215,11 @@ export default function Home() {
     if (over && over.id === 'workspace-canvas') {
       const type = active.data.current?.type;
       const dataset = active.data.current?.dataset;
-      
+
       if (type) {
         const activator = event.activatorEvent as MouseEvent;
         const delta = event.delta;
-        
+
         const clientX = activator.clientX + delta.x;
         const clientY = activator.clientY + delta.y;
 
@@ -269,15 +269,15 @@ export default function Home() {
   }
 
   return (
-    <DndContext 
-      onDragStart={handleDragStart} 
+    <DndContext
+      onDragStart={handleDragStart}
       onDragMove={handleDragMove}
-      onDragEnd={handleDragEnd} 
+      onDragEnd={handleDragEnd}
       onDragCancel={handleDragCancel}
     >
       <div className="flex h-screen w-full bg-black text-white font-sans overflow-hidden">
         <Sidebar />
-        
+
         <div className="flex-1 flex flex-col h-full overflow-hidden relative">
           {/* Dashboard Title Header (No Edit/Save Buttons) */}
           <header className="h-16 border-b border-neutral-800 bg-neutral-950 px-6 flex items-center justify-between shrink-0 select-none">
@@ -299,7 +299,7 @@ export default function Home() {
                       className="bg-neutral-900 text-white outline-none border border-neutral-700 px-2 py-0.5 rounded font-bold text-base w-64 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
                     />
                   ) : (
-                    <div 
+                    <div
                       onClick={handleStartEditTitle}
                       className="flex items-center gap-1.5 cursor-pointer hover:bg-neutral-900/60 hover:text-neutral-100 rounded px-1.5 py-0.5 -ml-1.5 transition-all duration-150 max-w-xs sm:max-w-md truncate"
                       title="Click to rename dashboard"
@@ -325,7 +325,7 @@ export default function Home() {
                       className="bg-neutral-900 text-neutral-300 outline-none border border-neutral-800 px-2 py-0.5 rounded text-xs w-80 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
                     />
                   ) : (
-                    <div 
+                    <div
                       onClick={handleStartEditDesc}
                       className="flex items-center gap-1.5 cursor-pointer hover:bg-neutral-900/60 hover:text-neutral-300 rounded px-1.5 py-0.5 -ml-1.5 transition-all duration-150 truncate max-w-sm sm:max-w-xl"
                       title="Click to edit description"
@@ -339,7 +339,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
+
             <div>
               {hasUnsavedChanges ? (
                 <button
@@ -365,14 +365,14 @@ export default function Home() {
               {pages.map((page) => {
                 const isActive = page.id === activePageId;
                 const isEditingName = page.id === editingPageId;
-                
+
                 return (
                   <div
                     key={page.id}
                     onClick={() => !isActive && setActivePage(page.id)}
                     className={`group relative flex items-center gap-2 h-8 px-3 rounded-lg border text-xs font-semibold cursor-pointer transition-all duration-200 select-none
-                      ${isActive 
-                        ? 'bg-neutral-900 border-blue-500/80 text-white shadow-md shadow-blue-500/5' 
+                      ${isActive
+                        ? 'bg-neutral-900 border-blue-500/80 text-white shadow-md shadow-blue-500/5'
                         : 'bg-neutral-950/20 border-neutral-800/80 text-neutral-400 hover:text-neutral-200 hover:border-neutral-700'
                       }
                     `}
@@ -389,7 +389,7 @@ export default function Home() {
                         onClick={(e) => e.stopPropagation()}
                       />
                     ) : (
-                      <span 
+                      <span
                         onDoubleClick={(e) => {
                           e.stopPropagation();
                           handleStartRename(page.id, page.name);
@@ -436,7 +436,7 @@ export default function Home() {
                           </button>
                         </>
                       )}
-                      
+
                       {pages.length > 1 && (
                         <button
                           onClick={(e) => {
@@ -464,7 +464,7 @@ export default function Home() {
             </button>
           </div>
 
-           <WorkspaceCanvas />
+          <WorkspaceCanvas />
 
           {/* Keyboard shortcut instruction floating banner */}
           <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 pointer-events-none select-none">
@@ -479,8 +479,8 @@ export default function Home() {
               <button
                 onClick={() => saveLayout()}
                 className={`text-[10px] font-semibold transition-all duration-150 cursor-pointer
-                  ${hasUnsavedChanges 
-                    ? 'text-amber-400 hover:text-amber-300 hover:scale-105' 
+                  ${hasUnsavedChanges
+                    ? 'text-amber-400 hover:text-amber-300 hover:scale-105'
                     : 'text-neutral-500 cursor-default'
                   }
                 `}
